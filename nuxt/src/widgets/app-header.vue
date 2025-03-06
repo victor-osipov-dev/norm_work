@@ -7,7 +7,6 @@
 
             <AppNav></AppNav>
         </div>
-
     </div>
 </template>
 

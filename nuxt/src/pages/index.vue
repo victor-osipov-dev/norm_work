@@ -1,7 +1,9 @@
 <template>
     <div>
         <AppHeader></AppHeader>
-        <AppMain></AppMain>
+
+        <PostTypeList post_type="programming"></PostTypeList>
+        <PostTypeList post_type="design"></PostTypeList>
     </div>
 </template>
 

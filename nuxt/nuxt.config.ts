@@ -7,7 +7,8 @@ export default defineNuxtConfig({
       '@vueuse/nuxt',
       '@nuxtjs/google-fonts',
       '@nuxtjs/tailwindcss',
-      'vuetify-nuxt-module'
+      'vuetify-nuxt-module',
+      '@nuxtjs/i18n'
     ],
     components: [
         {
@@ -27,5 +28,14 @@ export default defineNuxtConfig({
         families: {
             'Open Sans': true
         }
+    },
+    i18n: {
+        vueI18n: './i18n.config.ts',
+        strategy: 'prefix_and_default',
+        defaultLocale: 'ru',
+        locales: [
+            { code: 'en', language: 'en-US' },
+            { code: 'ru', language: 'ru-RU' }
+        ],
     }
 })
