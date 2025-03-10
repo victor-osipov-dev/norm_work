@@ -37,5 +37,5 @@ export default defineNuxtConfig({
             { code: 'en', language: 'en-US' },
             { code: 'ru', language: 'ru-RU' }
         ],
-    }
+    },
 })

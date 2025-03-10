@@ -1,6 +1,10 @@
 <template>
-    <div class="container mx-auto p-2">
-        <h2 class="mb-2">{{ $t(post_type) }}</h2>
+    <div :id="post_type" class="container mx-auto p-2">
+        <div class="flex justify-between items-center mb-4">
+            <h2 class="text-gray-900 text-2xl">{{ $t(post_type) }}</h2>
+
+            <img class="w-10 cursor-pointer" src="@/shared/img/arrow-right.png" alt="">
+        </div>
         <PostList :posts="posts"></PostList>
     </div>
 </template>

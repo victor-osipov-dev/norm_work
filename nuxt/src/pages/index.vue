@@ -2,6 +2,8 @@
     <div>
         <AppHeader></AppHeader>
 
+        <CategoryList></CategoryList>
+
         <PostTypeList post_type="programming"></PostTypeList>
         <PostTypeList post_type="design"></PostTypeList>
     </div>
