@@ -3,9 +3,15 @@
         <div class="app-post__header relative overflow-hidden rounded">
             <img class="app-post__img row-start-1 w-full" v-if="post.images?.[0]" :src="post.images[0]" alt="">
 
-            <div class="app-post__header-content min-h-11 absolute bottom-0 left-0 right-0 flex items-center px-2 text-white bg-black/50">
-                <p v-if="post.min_price" class="text-green-400 text-lg font-bold">От {{ post.min_price }} руб.</p>
-                <img src="" alt="">
+            <div
+                class="app-post__header-content min-h-11 absolute bottom-0 left-0 right-0 flex items-center justify-between px-2 text-white bg-black/50">
+                <p class="text-green-400 text-xl font-bold">{{ post.min_price }} – {{ post.max_price }} ₽</p>
+
+                <div class="flex items-center gap-1">
+                    <img class="h-4 mb-0.5" src="@/shared/img/star.png" alt="">
+                    <p>{{ post.rating }}</p>
+                    <p>({{ post.number_reviews }})</p>
+                </div>
             </div>
         </div>
 
@@ -39,6 +45,6 @@ defineProps<{
 }
 .app-post__header-content {
     font-family: Montserrat;
-    backdrop-filter: blur(1px);
+    backdrop-filter: blur(3px);
 }
 </style>

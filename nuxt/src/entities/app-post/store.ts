@@ -32,7 +32,10 @@ export const usePostStore = defineStore('post', () => {
 Гарантирую высокое качество, надежность и соблюдение сроков. Если вам нужен профессиональный разработчик Vue. js и Nuxt. js — обращайтесь, и ваш проект будет в надежных руках!`,
             type: 'programming',
             images: ['https://cdn-edge.kwork.ru/pics/t3/57/34432848-67b6c84616eec.webp'],
-            min_price: 3000
+            min_price: 3000,
+            max_price: 5000,
+            rating: 4.9,
+            number_reviews: 1
         },
         {
             id: 2,
@@ -56,7 +59,10 @@ export const usePostStore = defineStore('post', () => {
 Гарантирую стабильность, безопасность и производительность сервера. Если у вас есть вопросы или особые требования, свяжитесь со мной! `,
             type: 'programming',
             images: ['https://cdn-edge.kwork.ru/pics/t3_r/06/29226300-67cbdb573e53f.webp'],
-            min_price: 1500
+            min_price: 1500,
+            max_price: 2000,
+            rating: 4.6,
+            number_reviews: 5
         },
         {
             id: 3,
@@ -65,7 +71,11 @@ export const usePostStore = defineStore('post', () => {
 
 Все мои кворки: https://kwork.ru/user/a_o_x`,
             type: 'programming',
-            images: ['https://cdn-edge.kwork.ru/pics/t3/92/21296952-1655557992.webp']
+            images: ['https://cdn-edge.kwork.ru/pics/t3/92/21296952-1655557992.webp'],
+            min_price: 2500,
+            max_price: 5000,
+            rating: 5,
+            number_reviews: 25
         },
         {
             id: 4,
@@ -91,7 +101,10 @@ export const usePostStore = defineStore('post', () => {
 Свяжитесь со мной, чтобы узнать больше о моих услугах и начать работу над вашим проектом!`,
             type: 'programming',
             images: ['https://cdn-edge.kwork.ru/pics/t3/92/370534-1.webp'],
-            min_price: 5000
+            min_price: 5000,
+            max_price: 10000,
+            rating: 4.9,
+            number_reviews: 2
         },
         {
             id: 5,
@@ -123,7 +136,10 @@ export const usePostStore = defineStore('post', () => {
 Моя цель! Я хочу быть лучшим и качественным разработчиком на рынке`,
             type: 'programming',
             images: ['https://cdn-edge.kwork.ru/pics/t3/90/23874622-656a276fc81d1.webp'],
-            min_price: 500
+            min_price: 500,
+            max_price: 1000,
+            rating: 4.8,
+            number_reviews: 134
         },
         {
             id: 6,
@@ -153,7 +169,10 @@ export const usePostStore = defineStore('post', () => {
 Буду рад с вами работать!`,
             type: 'programming',
             images: ['https://cdn-edge.kwork.ru/pics/t3/44/34566144-669a8dacb2894.webp'],
-            min_price: 1000
+            min_price: 1000,
+            max_price: 2500,
+            rating: 4.9,
+            number_reviews: 23
         },
         {
             id: 7,
@@ -180,7 +199,11 @@ export const usePostStore = defineStore('post', () => {
 
 Гарантия исправления ошибок`,
             type: 'programming',
-            images: ['https://cdn-edge.kwork.ru/pics/t3/43/23090957-674ab442d4715.webp']
+            images: ['https://cdn-edge.kwork.ru/pics/t3/43/23090957-674ab442d4715.webp'],
+            min_price: 500,
+            max_price: 15000,
+            rating: 4.7,
+            number_reviews: 233
         },
         {
             id: 8,
@@ -192,7 +215,11 @@ export const usePostStore = defineStore('post', () => {
 У меня есть три вида опций , но если вам этого мало, вы всегда можете добавить еще , стоимость одного дополнительного блока составляет 6000 рублей
 Мною также может быть разработан любой адаптив к сайту, но эта услуга оплачивается отдельно, вы можете ознакомиться с ценами у меня на странице.`,
             type: 'design',
-            images: ['https://cdn-edge.kwork.ru/pics/t3/52/7557018-64293d2c40b4a.webp']
+            images: ['https://cdn-edge.kwork.ru/pics/t3/52/7557018-64293d2c40b4a.webp'],
+            min_price: 2000,
+            max_price: 4000,
+            rating: 4.6,
+            number_reviews: 65
         },
         {
             id: 9,
@@ -225,7 +252,11 @@ export const usePostStore = defineStore('post', () => {
 
 + Дизайн мобильного приложения`,
             type: 'design',
-            images: ['https://cdn-edge.kwork.ru/pics/t3/83/8504863-6797c599e563e.webp']
+            images: ['https://cdn-edge.kwork.ru/pics/t3/83/8504863-6797c599e563e.webp'],
+            min_price: 3000,
+            max_price: 6000,
+            rating: 5,
+            number_reviews: 5
         },
     ])
     const usePostType = (type: Ref<string> | string): IPost[] => {

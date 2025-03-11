@@ -5,7 +5,7 @@
             <NuxtLink class="cursor-pointer">{{ $t('posts') }}</NuxtLink>
         </div>
 
-        <AppButton class="cursor-pointer ml-2 bg-white">{{ $t('signin') }}</AppButton>
+        <AppButton @click="navigateTo('/signin')" class="cursor-pointer ml-2 bg-white">{{ $t('signin') }}</AppButton>
     </div>
 </template>
 
