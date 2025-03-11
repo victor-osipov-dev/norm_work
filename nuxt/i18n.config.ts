@@ -4,11 +4,17 @@ export default defineI18nConfig(() => ({
     messages: {
         en: {
             'programming': 'Programming',
-            'design': 'Design'
+            'design': 'Design',
+            'signin': 'Signin',
+            'orders': 'Orders',
+            'posts': 'Posts'
         },
         ru: {
             'programming': 'Программирование',
-            'design': 'Дизайн'
+            'design': 'Дизайн',
+            'signin': 'Войти',
+            'orders': 'Заказы',
+            'posts': 'Обьявления'
         }
     },
 }))

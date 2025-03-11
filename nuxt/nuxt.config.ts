@@ -19,10 +19,6 @@ export default defineNuxtConfig({
     alias: {
         "@": '../src'
     },
-    dir: {
-        pages: './src/pages',
-        layouts: './src/app/layouts'
-    },
     googleFonts: {
         download: true,
         families: {

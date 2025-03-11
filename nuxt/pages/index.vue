@@ -2,7 +2,7 @@
     <div>
         <AppHeader></AppHeader>
 
-        <CategoryList></CategoryList>
+        <CategorySearch></CategorySearch>
 
         <PostTypeList post_type="programming"></PostTypeList>
         <PostTypeList post_type="design"></PostTypeList>

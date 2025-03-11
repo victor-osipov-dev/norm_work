@@ -1,9 +1,8 @@
 <template>
     <div class="post-list">
-        <div class="posts grid grid-flow-col justify-start gap-4 overflow-x-auto">
+        <div class="posts grid grid-flow-col justify-start overflow-x-auto">
             <AppPost v-for="post in posts" :post="post"></AppPost>
         </div>
-
     </div>
 </template>
 
@@ -18,25 +17,27 @@ defineProps<{
 
 </script>
 
-<style lang="scss" scoped>
+<style scoped>
 @tailwind components;
 
 .posts {
+    --posts-gap: 1rem;
+    --number-columns: 1;
     grid-template-rows: repeat(6, auto);
-    grid-auto-columns: minmax(calc(100%), 1fr);
     scroll-snap-type: x mandatory;
+    gap: var(--posts-gap);
+    grid-auto-columns: calc((100% / var(--number-columns)) - (var(--posts-gap) * (var(--number-columns) - 1)) / var(--number-columns));
     
     @screen sm {
-        $number-columns: 2;
-        grid-auto-columns: minmax(calc(100% / $number-columns - 1rem), 1fr);
-    }
-    @screen md {
-        $number-columns: 3;
-        grid-auto-columns: minmax(calc((100% / $number-columns) - 1rem), 1fr);
+        --number-columns: 2;
     }
     @screen lg {
-        $number-columns: 4;
-        grid-auto-columns: minmax(calc(100% / $number-columns - 1rem), 1fr);
+        --number-columns: 3;
     }
+    @screen 2xl {
+        --number-columns: 4;
+    }
+
+    
 }
 </style>
