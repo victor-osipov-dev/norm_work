@@ -22,7 +22,8 @@ export default defineNuxtConfig({
     googleFonts: {
         download: true,
         families: {
-            'Open Sans': true
+            'Open Sans': true,
+            'Montserrat': true,
         }
     },
     i18n: {

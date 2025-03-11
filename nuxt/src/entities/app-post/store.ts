@@ -31,7 +31,8 @@ export const usePostStore = defineStore('post', () => {
 
 Гарантирую высокое качество, надежность и соблюдение сроков. Если вам нужен профессиональный разработчик Vue. js и Nuxt. js — обращайтесь, и ваш проект будет в надежных руках!`,
             type: 'programming',
-            images: ['https://cdn-edge.kwork.ru/pics/t3/57/34432848-67b6c84616eec.webp']
+            images: ['https://cdn-edge.kwork.ru/pics/t3/57/34432848-67b6c84616eec.webp'],
+            min_price: 3000
         },
         {
             id: 2,
@@ -54,7 +55,8 @@ export const usePostStore = defineStore('post', () => {
 
 Гарантирую стабильность, безопасность и производительность сервера. Если у вас есть вопросы или особые требования, свяжитесь со мной! `,
             type: 'programming',
-            images: ['https://cdn-edge.kwork.ru/pics/t3_r/06/29226300-67cbdb573e53f.webp']
+            images: ['https://cdn-edge.kwork.ru/pics/t3_r/06/29226300-67cbdb573e53f.webp'],
+            min_price: 1500
         },
         {
             id: 3,
@@ -88,7 +90,8 @@ export const usePostStore = defineStore('post', () => {
 Я делаю свою работу качественно, быстро и в срок.
 Свяжитесь со мной, чтобы узнать больше о моих услугах и начать работу над вашим проектом!`,
             type: 'programming',
-            images: ['https://cdn-edge.kwork.ru/pics/t3/92/370534-1.webp']
+            images: ['https://cdn-edge.kwork.ru/pics/t3/92/370534-1.webp'],
+            min_price: 5000
         },
         {
             id: 5,
@@ -119,7 +122,8 @@ export const usePostStore = defineStore('post', () => {
 
 Моя цель! Я хочу быть лучшим и качественным разработчиком на рынке`,
             type: 'programming',
-            images: ['https://cdn-edge.kwork.ru/pics/t3/90/23874622-656a276fc81d1.webp']
+            images: ['https://cdn-edge.kwork.ru/pics/t3/90/23874622-656a276fc81d1.webp'],
+            min_price: 500
         },
         {
             id: 6,
@@ -148,7 +152,8 @@ export const usePostStore = defineStore('post', () => {
 
 Буду рад с вами работать!`,
             type: 'programming',
-            images: ['https://cdn-edge.kwork.ru/pics/t3/44/34566144-669a8dacb2894.webp']
+            images: ['https://cdn-edge.kwork.ru/pics/t3/44/34566144-669a8dacb2894.webp'],
+            min_price: 1000
         },
         {
             id: 7,

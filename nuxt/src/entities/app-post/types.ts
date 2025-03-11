@@ -3,5 +3,7 @@ export interface IPost {
     title: string,
     description: string,
     images?: string[],
-    type: string
+    type: string,
+    min_price?: number,
+    price?: number
 }
