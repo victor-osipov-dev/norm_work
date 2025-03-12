@@ -1,7 +1,10 @@
 <template>
     <div class="app-post bg-pink-50 p-2 rounded-md grid grid-rows-subgrid ">
         <div class="app-post__header relative overflow-hidden rounded">
-            <img class="app-post__img row-start-1 w-full cursor-pointer" v-if="post.images?.[0]" :src="post.images[0]" alt="">
+            <NuxtLinkLocale :to="{name: 'post', params: {id: post.id}}">
+                <img class="app-post__img row-start-1 w-full cursor-pointer" v-if="post.images?.[0]" :src="post.images[0]" alt="">
+            </NuxtLinkLocale>
+            
 
             <div
                 class="app-post__header-content absolute bottom-0 left-0 right-0 p-1 flex items-center justify-between px-2 text-white bg-black/50">
@@ -15,7 +18,7 @@
             </div>
         </div>
 
-        <h3 class="row-start-2 text-2xl hover:underline cursor-pointer">{{ post.title }}</h3>
+        <h3 class="row-start-2 text-2xl hover:underline cursor-pointer"><NuxtLinkLocale :to="{name: 'post', params: {id: post.id}}">{{ post.title }}</NuxtLinkLocale></h3>
         <p class="app-post__description row-start-3">{{ post.description }}</p>
     </div>
 </template>
@@ -28,7 +31,7 @@ defineProps<{
 }>()
 </script>
 
-<style  lang="scss">
+<style scoped lang="scss">
 .app-post {
     grid-row: span 3;
     scroll-snap-align: start;
