@@ -6,13 +6,13 @@
         </div>
 
 
-        <ul class="category-list grid gap-x-6 gap-y-2 text-lg md:text-base py-2 sm:!py-0">
-            <li><a href="#programming">{{ $t('programming') }}</a></li>
-            <li><a href="#design">{{ $t('design') }}</a></li>
-            <li><a href="#video-audio">{{ $t('video/audio') }}</a></li>
-            <li><a href="#texts">{{ $t('texts') }}</a></li>
-            <li><a href="#marketing">{{ $t('marketing') }}</a></li>
-            <li><a href="#seo">{{ $t('seo') }}</a></li>
+        <ul class="category-list w-full md:w-max grid bg-gray-200 gap-x-[1px] gap-y-[1px] text-lg md:text-base items-center">
+            <li class="bg-pink-50 py-2 px-4 text-center text-sm xs:text-base"><a href="#programming">{{ $t('programming') }}</a></li>
+            <li class="bg-pink-50 py-2 px-4 text-center text-sm xs:text-base"><a href="#design">{{ $t('design') }}</a></li>
+            <li class="bg-pink-50 py-2 px-4 text-center text-sm xs:text-base"><a href="#video-audio">{{ $t('video/audio') }}</a></li>
+            <li class="bg-pink-50 py-2 px-4 text-center text-sm xs:text-base"><a href="#texts">{{ $t('texts') }}</a></li>
+            <li class="bg-pink-50 py-2 px-4 text-center text-sm xs:text-base"><a href="#marketing">{{ $t('marketing') }}</a></li>
+            <li class="bg-pink-50 py-2 px-4 text-center text-sm xs:text-base"><a href="#seo">{{ $t('seo') }}</a></li>
         </ul>
     </div>
 </template>
@@ -25,11 +25,16 @@ const search = ref('')
 .category-list {
     grid-auto-flow: column;
     grid-auto-columns: auto;
-    grid-template-rows: repeat(3, auto);
-    justify-content: start;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    /* justify-content: start; */
 
+    @screen xs {
+        grid-template-columns: repeat(2, 1fr);
+    }
     @screen md {
-        grid-template-rows: repeat(2, auto);
+        
+        grid-template-rows: repeat(2, 1fr);
     }
 }
 </style>

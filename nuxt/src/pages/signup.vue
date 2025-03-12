@@ -3,9 +3,12 @@
         <form class="bg-sky-300 p-8 rounded-md text-white " @click.prevent action="#">
             <h2 class="text-3xl mb-8 text-center">Регистрация</h2>
 
-            <div class="form mb-8">
+            <div class="grid gap-4 mb-8 xs:grid-cols-2">
                 <AppInput placeholder="Имя"></AppInput>
                 <AppInput placeholder="Фамилия"></AppInput>
+
+                <hr class="border-slate-100 xs:hidden">
+
                 <AppInput placeholder="Email"></AppInput>
                 <AppInput placeholder="Пароль"></AppInput>
             </div>

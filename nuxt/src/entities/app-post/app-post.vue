@@ -2,13 +2,15 @@
     <div class="app-post bg-pink-50 p-2 rounded-md grid grid-rows-subgrid ">
         <div class="app-post__header relative overflow-hidden rounded">
             <NuxtLinkLocale :to="{name: 'post', params: {id: post.id}}">
-                <img class="app-post__img row-start-1 w-full cursor-pointer" v-if="post.images?.[0]" :src="post.images[0]" alt="">
+                <img class="app-post__img row-start-1 w-full cursor-pointer" v-if="post.images?.[0]"
+                    :src="post.images[0]" alt="">
             </NuxtLinkLocale>
-            
+
 
             <div
                 class="app-post__header-content absolute bottom-0 left-0 right-0 p-1 flex items-center justify-between px-2 text-white bg-black/50">
-                <p class="text-green-400 text-xl font-bold">{{ post.min_price }} – {{ post.max_price }} ₽</p>
+                <p class="text-green-400 font-bold text-lg xs:text-base sm:text-lg">{{ post.min_price }} – {{
+                    post.max_price }} ₽</p>
 
                 <div class="flex items-center gap-1">
                     <img class="h-4 mb-0.5" src="@/shared/img/star.png" alt="">
@@ -18,7 +20,9 @@
             </div>
         </div>
 
-        <h3 class="row-start-2 text-2xl hover:underline cursor-pointer"><NuxtLinkLocale :to="{name: 'post', params: {id: post.id}}">{{ post.title }}</NuxtLinkLocale></h3>
+        <h3 class="text-lg row-start-2  hover:underline cursor-pointer">
+            <NuxtLinkLocale :to="{name: 'post', params: {id: post.id}}">{{ post.title }}</NuxtLinkLocale>
+        </h3>
         <p class="row-start-3 line-clamp-4">{{ post.description }}</p>
     </div>
 </template>
