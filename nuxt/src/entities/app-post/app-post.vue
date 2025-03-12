@@ -19,7 +19,7 @@
         </div>
 
         <h3 class="row-start-2 text-2xl hover:underline cursor-pointer"><NuxtLinkLocale :to="{name: 'post', params: {id: post.id}}">{{ post.title }}</NuxtLinkLocale></h3>
-        <p class="app-post__description row-start-3">{{ post.description }}</p>
+        <p class="row-start-3 line-clamp-4">{{ post.description }}</p>
     </div>
 </template>
 
@@ -38,13 +38,6 @@ defineProps<{
 }
 .app-post__img {
     box-shadow: inset 0 0 1px 1px red;
-}
-.app-post__description {
-    display: -webkit-box;
-    -webkit-line-clamp: 4;
-    -webkit-box-orient: vertical;
-    max-height: 10rem;
-    overflow: hidden;
 }
 .app-post__header-content {
     font-family: Montserrat;

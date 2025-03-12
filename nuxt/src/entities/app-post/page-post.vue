@@ -2,7 +2,7 @@
     <div class="app-post bg-pink-50 rounded-md flex p-4 gap-4">
         <div class="">
             <h3 class="text-2xl mb-4">{{ post.title }}</h3>
-            <p class="app-post__description  whitespace-pre-wrap max-w-[50rem]">{{ post.description }}</p>
+            <p class="app-post__description whitespace-pre-wrap max-w-[50rem]">{{ post.description }}</p>
         </div>
 
         <div class="app-post__header relative overflow-hidden rounded self-start flex-grow-1">
