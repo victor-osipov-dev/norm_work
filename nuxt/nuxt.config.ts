@@ -27,12 +27,17 @@ export default defineNuxtConfig({
         }
     },
     i18n: {
-        vueI18n: './i18n.config.ts',
         strategy: 'prefix_and_default',
         defaultLocale: 'ru',
         locales: [
-            { code: 'en', language: 'en-US' },
-            { code: 'ru', language: 'ru-RU' }
+            { code: 'en', language: 'en-US', file: 'en-US.json' },
+            { code: 'ru', language: 'ru-RU', file: 'ru-RU.json' }
         ],
+        lazy: true,
+        restructureDir: './src/app/i18n',
     },
+    dir: {
+        pages: './src/pages',
+        layouts: './src/app/layouts'
+    }
 })

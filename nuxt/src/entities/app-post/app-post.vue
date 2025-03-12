@@ -1,7 +1,7 @@
 <template>
     <div class="app-post bg-pink-50 p-2 rounded-md grid grid-rows-subgrid ">
         <div class="app-post__header relative overflow-hidden rounded">
-            <img class="app-post__img row-start-1 w-full" v-if="post.images?.[0]" :src="post.images[0]" alt="">
+            <img class="app-post__img row-start-1 w-full cursor-pointer" v-if="post.images?.[0]" :src="post.images[0]" alt="">
 
             <div
                 class="app-post__header-content min-h-11 absolute bottom-0 left-0 right-0 flex items-center justify-between px-2 text-white bg-black/50">
@@ -15,7 +15,7 @@
             </div>
         </div>
 
-        <h3 class="row-start-2 text-2xl">{{ post.title }}</h3>
+        <h3 class="row-start-2 text-2xl hover:underline cursor-pointer">{{ post.title }}</h3>
         <p class="app-post__description row-start-3">{{ post.description }}</p>
     </div>
 </template>

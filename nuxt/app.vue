@@ -1,10 +1,11 @@
 <template>
-  <div>
-    <NuxtRouteAnnouncer />
-    <NuxtPage class="flex flex-column gap-6"></NuxtPage>
-  </div>
+  <NuxtRouteAnnouncer />
+
+  <NuxtLayout>
+    <NuxtPage></NuxtPage>
+  </NuxtLayout>
 </template>
 
 <script setup>
-import './src/shared/styles/main.scss'
+import "./src/shared/styles/main.scss";
 </script>
