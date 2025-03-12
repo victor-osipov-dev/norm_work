@@ -1,6 +1,4 @@
 <template>
-    <AppHeader></AppHeader>
-
     <CategorySearch></CategorySearch>
 
     <PostTypeList post_type="programming"></PostTypeList>

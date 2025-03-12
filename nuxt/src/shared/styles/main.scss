@@ -1,1 +1,8 @@
 @use 'base';
+
+
+.form {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    gap: 1rem;
+}
