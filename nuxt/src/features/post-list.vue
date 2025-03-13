@@ -7,7 +7,7 @@
 </template>
 
 <script lang="ts" setup>
-import type { IPost } from '../entities/app-post/types';
+import type { IPost } from '../entities/post/types';
 
 
 defineProps<{
@@ -28,17 +28,19 @@ defineProps<{
     scroll-snap-type: x mandatory;
     gap: var(--posts-gap);
     grid-auto-columns: calc((100% / var(--number-columns)) - (var(--posts-gap) * (var(--number-columns) - 1)) / var(--number-columns));
-    
+
     @screen xs {
         --number-columns: 2;
     }
+
     @screen lg {
         --number-columns: 3;
     }
+
     @screen 2xl {
         --number-columns: 4;
     }
 
-    
+
 }
 </style>

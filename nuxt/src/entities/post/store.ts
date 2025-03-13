@@ -34,12 +34,13 @@ export const usePostStore = defineStore('post', () => {
             images: ['https://cdn-edge.kwork.ru/pics/t3/57/34432848-67b6c84616eec.webp'],
             min_price: 3000,
             max_price: 5000,
-            rating: 4.9,
-            number_reviews: 1,
+            
             user: {
                 first_name: 'Victor',
                 last_name: 'Osipov',
-                avatar: 'https://cdn-edge.kwork.ru/files/avatar/large/30/17801800-2.jpg'
+                avatar: 'https://cdn-edge.kwork.ru/files/avatar/large/30/17801800-2.jpg',
+                rating: 4.9,
+                number_reviews: 1,
             }
         },
         {
@@ -66,11 +67,11 @@ export const usePostStore = defineStore('post', () => {
             images: ['https://cdn-edge.kwork.ru/pics/t3_r/06/29226300-67cbdb573e53f.webp'],
             min_price: 1500,
             max_price: 2000,
-            rating: 4.6,
-            number_reviews: 5,
             user: {
                 first_name: 'Victor',
-                last_name: 'Osipov'
+                last_name: 'Osipov',
+                rating: 4.6,
+                number_reviews: 5,
             }
         },
         {
@@ -83,11 +84,11 @@ export const usePostStore = defineStore('post', () => {
             images: ['https://cdn-edge.kwork.ru/pics/t3/92/21296952-1655557992.webp'],
             min_price: 2500,
             max_price: 5000,
-            rating: 5,
-            number_reviews: 25,
             user: {
                 first_name: 'Victor',
-                last_name: 'Osipov'
+                last_name: 'Osipov',
+                rating: 5,
+                number_reviews: 25,
             }
         },
         {
@@ -116,11 +117,11 @@ export const usePostStore = defineStore('post', () => {
             images: ['https://cdn-edge.kwork.ru/pics/t3/92/370534-1.webp'],
             min_price: 5000,
             max_price: 10000,
-            rating: 4.9,
-            number_reviews: 2,
             user: {
                 first_name: 'Victor',
-                last_name: 'Osipov'
+                last_name: 'Osipov',
+                rating: 4.9,
+                number_reviews: 2,
             }
         },
         {
@@ -155,11 +156,11 @@ export const usePostStore = defineStore('post', () => {
             images: ['https://cdn-edge.kwork.ru/pics/t3/90/23874622-656a276fc81d1.webp'],
             min_price: 500,
             max_price: 1000,
-            rating: 4.8,
-            number_reviews: 134,
             user: {
                 first_name: 'Victor',
-                last_name: 'Osipov'
+                last_name: 'Osipov',
+                rating: 4.8,
+                number_reviews: 134,
             }
         },
         {
@@ -192,11 +193,11 @@ export const usePostStore = defineStore('post', () => {
             images: ['https://cdn-edge.kwork.ru/pics/t3/44/34566144-669a8dacb2894.webp'],
             min_price: 1000,
             max_price: 2500,
-            rating: 4.9,
-            number_reviews: 23,
             user: {
                 first_name: 'Victor',
-                last_name: 'Osipov'
+                last_name: 'Osipov',
+                rating: 4.9,
+                number_reviews: 23,
             }
         },
         {
@@ -227,11 +228,11 @@ export const usePostStore = defineStore('post', () => {
             images: ['https://cdn-edge.kwork.ru/pics/t3/43/23090957-674ab442d4715.webp'],
             min_price: 500,
             max_price: 15000,
-            rating: 4.7,
-            number_reviews: 233,
             user: {
                 first_name: 'Victor',
-                last_name: 'Osipov'
+                last_name: 'Osipov',
+                rating: 4.7,
+                number_reviews: 233,
             }
         },
         {
@@ -252,11 +253,11 @@ export const usePostStore = defineStore('post', () => {
             images: ['https://cdn-edge.kwork.ru/pics/t3/12/28172945-659578532c87b.webp'],
             min_price: 1000,
             max_price: 10000,
-            rating: 4.9,
-            number_reviews: 195,
             user: {
                 first_name: 'Victor',
-                last_name: 'Osipov'
+                last_name: 'Osipov',
+                rating: 4.9,
+                number_reviews: 195,
             }
         },
         {
@@ -272,11 +273,11 @@ export const usePostStore = defineStore('post', () => {
             images: ['https://cdn-edge.kwork.ru/pics/t3/52/7557018-64293d2c40b4a.webp'],
             min_price: 2000,
             max_price: 4000,
-            rating: 4.6,
-            number_reviews: 65,
             user: {
                 first_name: 'Victor',
-                last_name: 'Osipov'
+                last_name: 'Osipov',
+                rating: 4.6,
+                number_reviews: 65,
             }
         },
         {
@@ -313,11 +314,11 @@ export const usePostStore = defineStore('post', () => {
             images: ['https://cdn-edge.kwork.ru/pics/t3/83/8504863-6797c599e563e.webp'],
             min_price: 3000,
             max_price: 6000,
-            rating: 5,
-            number_reviews: 5,
             user: {
                 first_name: 'Victor',
-                last_name: 'Osipov'
+                last_name: 'Osipov',
+                rating: 5,
+                number_reviews: 5,
             }
         },
         {
@@ -334,11 +335,11 @@ export const usePostStore = defineStore('post', () => {
             images: ['https://cdn-edge.kwork.ru/pics/t3/23/144857-1545126908.webp'],
             min_price: 1000,
             max_price: 5000,
-            rating: 4.9,
-            number_reviews: 334,
             user: {
                 first_name: 'Victor',
-                last_name: 'Osipov'
+                last_name: 'Osipov',
+                rating: 4.9,
+                number_reviews: 334,
             }
         },
         {
@@ -349,11 +350,11 @@ export const usePostStore = defineStore('post', () => {
             images: ['https://cdn-edge.kwork.ru/pics/t3/19/39628-6.webp'],
             min_price: 500,
             max_price: 1500,
-            rating: 4.9,
-            number_reviews: 101,
             user: {
                 first_name: 'Victor',
-                last_name: 'Osipov'
+                last_name: 'Osipov',
+                rating: 4.9,
+                number_reviews: 101,
             }
         },
         {
@@ -364,11 +365,11 @@ export const usePostStore = defineStore('post', () => {
             images: ['https://cdn-edge.kwork.ru/pics/t3/41/265338-664442d893492.webp'],
             min_price: 5000,
             max_price: 60000,
-            rating: 4.8,
-            number_reviews: 485,
             user: {
                 first_name: 'Victor',
-                last_name: 'Osipov'
+                last_name: 'Osipov',
+                rating: 4.8,
+                number_reviews: 485,
             }
         },
         {
@@ -405,11 +406,11 @@ export const usePostStore = defineStore('post', () => {
             images: ['https://cdn-edge.kwork.ru/pics/t3/43/20930729-1659561807.webp'],
             min_price: 1000,
             max_price: 2500,
-            rating: 5,
-            number_reviews: 161,
             user: {
                 first_name: 'Victor',
-                last_name: 'Osipov'
+                last_name: 'Osipov',
+                rating: 5,
+                number_reviews: 161,
             }
         },
         {
@@ -422,11 +423,11 @@ export const usePostStore = defineStore('post', () => {
             images: ['https://cdn-edge.kwork.ru/pics/t3/83/10308744-1603382683.webp'],
             min_price: 500,
             max_price: 1000,
-            rating: 5,
-            number_reviews: 409,
             user: {
                 first_name: 'Victor',
-                last_name: 'Osipov'
+                last_name: 'Osipov',
+                rating: 5,
+                number_reviews: 409,
             }
         },
         {
@@ -474,11 +475,11 @@ SEO-тексты.
             images: ['https://cdn-edge.kwork.ru/pics/t3/37/12589811-1612102437.webp'],
             min_price: 18000,
             max_price: 24000,
-            rating: 5,
-            number_reviews: 731,
             user: {
                 first_name: 'Victor',
-                last_name: 'Osipov'
+                last_name: 'Osipov',
+                rating: 5,
+                number_reviews: 731,
             }
         },
         {
@@ -511,11 +512,11 @@ SEO-тексты.
             images: ['https://cdn-edge.kwork.ru/pics/t3/50/35378896-66db335110052.webp'],
             min_price: 1000,
             max_price: 2000,
-            rating: 5,
-            number_reviews: 157,
             user: {
                 first_name: 'Victor',
-                last_name: 'Osipov'
+                last_name: 'Osipov',
+                rating: 5,
+                number_reviews: 157,
             }
         },
         {
@@ -538,11 +539,11 @@ SEO-тексты.
             images: ['https://cdn-edge.kwork.ru/pics/t3/70/14812898-1622226070.webp'],
             min_price: 15000,
             max_price: 50000,
-            rating: 5,
-            number_reviews: 4278,
             user: {
                 first_name: 'Victor',
-                last_name: 'Osipov'
+                last_name: 'Osipov',
+                rating: 5,
+                number_reviews: 4278,
             }
         },
     ])
