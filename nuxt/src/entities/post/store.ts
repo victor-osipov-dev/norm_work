@@ -547,14 +547,25 @@ SEO-тексты.
             }
         },
     ])
-    const usePostType = (type: Ref<string> | string): IPost[] => {
-        return posts.value.filter((post: IPost) => post.type == toValue(type))
+
+    const types = ref<string[]>([])
+    const posts_type = computed(() => {
+        const obj: any = {}
+
+        types.value.forEach((type: string) => {
+            obj[type] = posts.value.filter((post: IPost) => post.type == toValue(type))
+        })
+
+        return obj;
+    })
+
+    function getPostsType(type: string) {
+        if (!types.value.includes(type)) types.value.push(type)
+        return posts_type.value[type]
     }
-
-
 
     return {
         posts,
-        usePostType
+        getPostsType
     }
 })

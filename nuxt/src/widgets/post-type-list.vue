@@ -2,13 +2,13 @@
     <div :id="post_type" class="container mx-auto p-2">
         <div class="flex justify-between items-center mb-4">
             <h2 class="text-gray-900 text-2xl">
-                <NuxtLinkLocale :to="{ name: 'posts' }">{{ $t(post_type) }}</NuxtLinkLocale>
+                <NuxtLinkLocale :to="{ name: 'posts', params: { type: post_type } }">{{ $t(post_type) }}</NuxtLinkLocale>
             </h2>
 
-            <NuxtLinkLocale :to="{ name: 'posts' }"><img class="w-10 cursor-pointer" src="@/shared/img/arrow-right.png"
+            <NuxtLinkLocale :to="{ name: 'posts', params: { type: post_type } }"><img class="w-10 cursor-pointer" src="@/shared/img/arrow-right.png"
                     alt=""></NuxtLinkLocale>
         </div>
-        <PostList :posts="posts"></PostList>
+        <MiniPostList :posts="posts"></MiniPostList>
     </div>
 </template>
 
@@ -21,7 +21,7 @@ const props = defineProps<{
 }>()
 const post_store = usePostStore()
 
-const posts: IPost[] = post_store.usePostType(props.post_type)
+const posts: Ref<IPost[]> = computed(() => post_store.getPostsType(props.post_type))
 </script>
 
 <style lang="scss" scoped></style>
