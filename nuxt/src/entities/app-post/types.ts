@@ -7,5 +7,10 @@ export interface IPost {
     min_price: number,
     max_price: number,
     rating: number,
-    number_reviews: number
+    number_reviews: number,
+    user: {
+        first_name: string,
+        last_name: string,
+        avatar?: string
+    }
 }

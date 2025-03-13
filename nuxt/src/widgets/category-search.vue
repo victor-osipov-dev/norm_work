@@ -9,7 +9,7 @@
         <ul class="category-list w-full md:w-max grid bg-gray-200 gap-x-[1px] gap-y-[1px] text-lg md:text-base items-center">
             <li class="bg-pink-50 py-2 px-4 text-center text-sm xs:text-base"><a href="#programming">{{ $t('programming') }}</a></li>
             <li class="bg-pink-50 py-2 px-4 text-center text-sm xs:text-base"><a href="#design">{{ $t('design') }}</a></li>
-            <li class="bg-pink-50 py-2 px-4 text-center text-sm xs:text-base"><a href="#video-audio">{{ $t('video/audio') }}</a></li>
+            <li class="bg-pink-50 py-2 px-4 text-center text-sm xs:text-base"><a href="#video/audio">{{ $t('video/audio') }}</a></li>
             <li class="bg-pink-50 py-2 px-4 text-center text-sm xs:text-base"><a href="#texts">{{ $t('texts') }}</a></li>
             <li class="bg-pink-50 py-2 px-4 text-center text-sm xs:text-base"><a href="#marketing">{{ $t('marketing') }}</a></li>
             <li class="bg-pink-50 py-2 px-4 text-center text-sm xs:text-base"><a href="#seo">{{ $t('seo') }}</a></li>
