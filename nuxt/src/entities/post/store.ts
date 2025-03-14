@@ -547,14 +547,13 @@ SEO-тексты.
             }
         },
     ])
-    const usePostType = (type: Ref<string> | string): IPost[] => {
+
+    function getPostsType(type: string): IPost[] {
         return posts.value.filter((post: IPost) => post.type == toValue(type))
     }
 
-
-
     return {
         posts,
-        usePostType
+        getPostsType
     }
 })
