@@ -11,8 +11,8 @@
 
                     <div class="flex items-center gap-1 ">
                         <img class="h-4 mb-0.5" src="@/shared/img/star.png" alt="">
-                        <p>{{ post.rating }}</p>
-                        <p>({{ post.number_reviews }})</p>
+                        <p>{{ post.user.rating }}</p>
+                        <p>({{ post.user.number_reviews }})</p>
                     </div>
                 </div>
             </div>
