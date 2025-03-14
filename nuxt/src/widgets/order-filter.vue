@@ -1,0 +1,40 @@
+<template>
+    <div class="container mx-auto bg-pink-50 p-2 rounded-md flex justify-between items-center">
+        <div class="flex items-center gap-8">
+            <div class="w-[20rem]  border-l-2 pl-4 border-gray-200 ">
+                <p class="text-lg font-[Montserrat] mb-2 flex justify-between font-bold">
+                    <span>Цена: </span>
+
+                    <span>
+                        {{ range[0].toLocaleString("ru-RU") }} -
+                        {{ range[1].toLocaleString("ru-RU") }} ₽
+                    </span>
+                </p>
+
+                <v-range-slider hide-details v-model="range" :step="1000" :min="0" :max="100_000"></v-range-slider>
+            </div>
+
+            <!-- <TreeSelect v-model="selectedValue" :options="nodes" selectionMode="checkbox" placeholder="Select Item" class="md:w-80 w-full" /> -->
+            
+        </div>
+
+        <div class="flex min-h-10 max-h-12 md:items-stretch md:flex-grow-1 lg:min-w-[25rem] xl:min-w-[30rem]">
+            <AppInput class="rounded-r-none outline-yellow-400 flex-grow-1" :placeholder="$t('search')" v-model="search"></AppInput>
+            <AppButton class="rounded-l-none bg-yellow-400 mr-4">{{ $t('find') }}</AppButton>
+        </div>
+    </div>
+</template>
+
+<script setup lang="ts">
+const range = ref([0, 50_000]);
+const search = ref('')
+
+const nodes = ref(null);
+const selectedValue = ref(null);
+</script>
+
+<style scoped>
+.green {
+    color: green;
+}
+</style>

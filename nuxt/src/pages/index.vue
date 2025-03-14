@@ -1,4 +1,8 @@
 <template>
+    <div class="container mx-auto mb-4">
+        <h1 class="text-3xl text-center">NormWork - простая фриланс биржа</h1>
+    </div>
+
     <CategorySearch></CategorySearch>
 
     <PostTypeList post_type="programming"></PostTypeList>

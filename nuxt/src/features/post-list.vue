@@ -7,7 +7,8 @@
 </template>
 
 <script lang="ts" setup>
-import type { IPost } from '../entities/app-post/pre';
+import type { IPost } from '../entities/post/types';
+
 
 defineProps<{
     posts: IPost[]

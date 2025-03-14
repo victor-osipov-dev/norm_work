@@ -8,7 +8,8 @@ export default defineNuxtConfig({
       '@nuxtjs/google-fonts',
       '@nuxtjs/tailwindcss',
       'vuetify-nuxt-module',
-      '@nuxtjs/i18n'
+      '@nuxtjs/i18n',
+      '@primevue/nuxt-module'
     ],
     components: [
         {

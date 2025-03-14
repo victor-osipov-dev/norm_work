@@ -5,8 +5,8 @@
 </template>
 
 <script setup lang="ts">
-import { usePostStore } from '~/src/entities/app-post/store'
-import type { IPost } from '~/src/entities/app-post/types'
+import { usePostStore } from '~/src/entities/post/store'
+import type { IPost } from '~/src/entities/post/types'
 
 definePageMeta({
     name: 'post'

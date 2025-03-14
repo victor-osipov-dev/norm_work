@@ -19,6 +19,7 @@
     "@nuxtjs/i18n": "^9.2.1",
     "@nuxtjs/tailwindcss": "^6.13.1",
     "@pinia/nuxt": "^0.10.1",
+    "@primevue/nuxt-module": "^4.3.2",
     "@vueuse/nuxt": "^12.7.0",
     "sass-embedded": "^1.85.1",
     "vuetify-nuxt-module": "^0.18.3"
