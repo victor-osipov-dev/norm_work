@@ -1,7 +1,7 @@
 <template>
     <div class="container mx-auto bg-pink-50 p-2 rounded-md flex justify-between items-center">
-        <div class="flex items-center gap-8">
-            <div class="w-[20rem]  border-l-2 pl-4 border-gray-200 ">
+        <div class="flex items-center gap-8 pl-2">
+            <div class="w-[20rem] border-gray-200 ">
                 <p class="text-lg font-[Montserrat] mb-2 flex justify-between font-bold">
                     <span>Цена: </span>
 
@@ -14,8 +14,10 @@
                 <v-range-slider hide-details v-model="range" :step="1000" :min="0" :max="100_000"></v-range-slider>
             </div>
 
-            <!-- <TreeSelect v-model="selectedValue" :options="nodes" selectionMode="checkbox" placeholder="Select Item" class="md:w-80 w-full" /> -->
-            
+            <FloatLabel class="w-full md:w-80" variant="in">
+                <TreeSelect filter show-clear v-model="selectedValue" :options="subcategories" selectionMode="checkbox" class="md:w-80 w-full" />
+                <label for="over_label">Категории</label>
+            </FloatLabel>
         </div>
 
         <div class="flex min-h-10 max-h-12 md:items-stretch md:flex-grow-1 lg:min-w-[25rem] xl:min-w-[30rem]">
@@ -26,11 +28,13 @@
 </template>
 
 <script setup lang="ts">
+import { subcategories } from '../shared/consts';
+
 const range = ref([0, 50_000]);
 const search = ref('')
 
-const nodes = ref(null);
 const selectedValue = ref(null);
+
 </script>
 
 <style scoped>

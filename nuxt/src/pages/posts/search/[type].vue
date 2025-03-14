@@ -1,5 +1,5 @@
 <template>
-    <PostList :post_type="'programming'"></PostList>
+    <PostList :post_type="$route.params.type as string"></PostList>
 </template>
 
 <script setup lang="ts">
