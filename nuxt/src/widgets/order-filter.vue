@@ -15,13 +15,15 @@
             </div>
 
             <FloatLabel class="w-full md:w-80" variant="in">
-                <TreeSelect filter show-clear v-model="selectedValue" :options="subcategories" selectionMode="checkbox" class="md:w-80 w-full" />
+                <TreeSelect ref="select_el" filter show-clear v-model="selectedValue" :options="subcategories" selectionMode="checkbox"
+                    class="md:w-80 w-full" />
                 <label for="over_label">Категории</label>
             </FloatLabel>
         </div>
 
         <div class="flex min-h-10 max-h-12 md:items-stretch md:flex-grow-1 lg:min-w-[25rem] xl:min-w-[30rem]">
-            <AppInput class="rounded-r-none outline-yellow-400 flex-grow-1" :placeholder="$t('search')" v-model="search"></AppInput>
+            <AppInput @focus="onFocus" class="rounded-r-none outline-yellow-400 flex-grow-1"
+                :placeholder="$t('search')" v-model="search"></AppInput>
             <AppButton class="rounded-l-none bg-yellow-400 mr-4">{{ $t('find') }}</AppButton>
         </div>
     </div>
@@ -29,6 +31,19 @@
 
 <script setup lang="ts">
 import { subcategories } from '../shared/consts';
+
+const select_el = useTemplateRef('select_el')
+
+
+async function onFocus(event: any) {
+    const unwatch = watchEffect(() => {
+        // @ts-ignore
+        if (select_el.value?.focused) {
+            event.target.focus()
+        }
+    })
+    setTimeout(() => unwatch(), 100)
+}
 
 const range = ref([0, 50_000]);
 const search = ref('')
