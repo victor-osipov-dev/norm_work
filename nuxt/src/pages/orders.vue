@@ -1,10 +1,12 @@
 <template>
     <OrderFilter></OrderFilter>
+
+    <OrderList></OrderList>
 </template>
 
 <script setup lang="ts">
 definePageMeta({
-    nmae: 'orders'
+    name: 'orders'
 })
 </script>
 

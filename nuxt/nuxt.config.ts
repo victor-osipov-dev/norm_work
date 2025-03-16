@@ -10,7 +10,7 @@ export default defineNuxtConfig({
       '@nuxtjs/tailwindcss',
       'vuetify-nuxt-module',
       '@nuxtjs/i18n',
-      '@primevue/nuxt-module'
+      '@primevue/nuxt-module',
     ],
     components: [
         {
@@ -43,10 +43,11 @@ export default defineNuxtConfig({
         layouts: './src/app/layouts'
     },
     primevue: {
+        autoImport: false,
         options: {
             theme: {
                 preset: Aura
             }
-        }
-    }
+        },
+    },
 })

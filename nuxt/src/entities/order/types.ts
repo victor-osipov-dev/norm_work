@@ -1,6 +1,7 @@
 import type { IUser } from "../user/types";
 
 export interface IOrder {
+    id: number,
     title: string,
     description: string,
     min_price: number,
