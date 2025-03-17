@@ -19,7 +19,7 @@ export const useOrderStore =  defineStore('order', () => {
             number_feedbacks: 2,
             min_price: 2000,
             max_price: 9000,
-            is_favorite: false,
+            is_favorite: true,
             is_viewed: false
         },
         {
