@@ -24,7 +24,9 @@ function toggleFavorite(order: IOrder) {
 
 <style scoped>
 .order-list {
-    grid-template-columns: max-content 800px auto;
+    @screen xl {
+        grid-template-columns: max-content 800px auto;
+    }
 
 }
 </style>

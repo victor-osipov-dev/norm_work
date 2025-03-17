@@ -29,7 +29,7 @@ defineProps<{
     gap: var(--posts-gap);
     grid-auto-columns: calc((100% / var(--number-columns)) - (var(--posts-gap) * (var(--number-columns) - 1)) / var(--number-columns));
 
-    @screen xs {
+    @screen sm {
         --number-columns: 2;
     }
 

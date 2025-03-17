@@ -1,7 +1,7 @@
 <template>
-    <div class="container mx-auto bg-pink-50 p-2 rounded-md flex justify-between items-center">
-        <div class="flex items-center gap-8 pl-2">
-            <div class="w-[20rem] border-gray-200 ">
+    <div class="container mx-auto bg-pink-50 p-2 pt-4 gap-8 rounded-md flex flex-col xl:flex-row xl:items-center justify-between">
+        <div class="flex flex-col md:flex-row gap-4 md:gap-8 lg:pl-2">
+            <div class="w-full border-gray-200 md:min-w-[20rem]">
                 <p class="text-lg font-[Montserrat] mb-2 flex justify-between font-bold">
                     <span>Цена: </span>
 
@@ -14,17 +14,18 @@
                 <v-range-slider hide-details v-model="range" :step="1000" :min="0" :max="100_000"></v-range-slider>
             </div>
 
-            <FloatLabel class="w-full md:w-80" variant="in">
-                <TreeSelect ref="select_el" filter show-clear v-model="selectedValue" :options="subcategories" selectionMode="checkbox"
-                    class="md:w-80 w-full" />
-                <label for="over_label">Категории</label>
-            </FloatLabel>
+            <div class="md:min-w-[20rem] xl:content-center">
+                <FloatLabel variant="in">
+                    <TreeSelect ref="select_el" filter show-clear v-model="selectedValue" :options="subcategories" selectionMode="checkbox" class="w-full"/>
+                    <label for="over_label">Категории</label>
+                </FloatLabel>
+            </div>
         </div>
 
-        <div class="flex min-h-10 max-h-12 md:items-stretch md:flex-grow-1 lg:min-w-[25rem] xl:min-w-[30rem]">
-            <AppInput @focus="onFocus" class="rounded-r-none outline-yellow-400 flex-grow-1"
+        <div class="flex w-full xl:w-auto min-h-10 max-h-12 md:items-stretch md:flex-grow-1 lg:min-w-[25rem] h-20 xl:min-w-[30rem] md:mr-4">
+            <AppInput @focus="onFocus" class="rounded-r-none outline-yellow-400 flex-grow-1 "
                 :placeholder="$t('search')" v-model="search"></AppInput>
-            <AppButton class="rounded-l-none bg-yellow-400 mr-4">{{ $t('find') }}</AppButton>
+            <AppButton class="rounded-l-none bg-yellow-400">{{ $t('find') }}</AppButton>
         </div>
     </div>
 </template>

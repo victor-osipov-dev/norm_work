@@ -1,6 +1,6 @@
 <template>
     <div class="bg-pink-50 container mx-auto p-2 rounded-md flex flex-col items-stretch justify-between gap-4 md:flex-row-reverse md:items-center">
-        <div class="flex min-h-10 max-h-12 md:items-stretch md:flex-grow-1 lg:min-w-[25rem] xl:min-w-[30rem] mr-4">
+        <div class="flex min-h-10 max-h-12 md:items-stretch md:flex-grow-1 lg:min-w-[25rem] xl:min-w-[30rem] md:mr-4">
             <AppInput class="rounded-r-none outline-yellow-400 flex-grow-1" :placeholder="$t('search')" v-model="search"></AppInput>
             <AppButton class="rounded-l-none bg-yellow-400">{{ $t('find') }}</AppButton>
         </div>

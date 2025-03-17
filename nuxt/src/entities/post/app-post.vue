@@ -9,8 +9,8 @@
 
             <div
                 class="app-post__header-content absolute bottom-0 left-0 right-0 p-1 flex items-center justify-between px-2 text-white bg-black/50">
-                <p class="text-green-400 font-bold text-lg xs:text-base sm:text-lg">{{ post.min_price }} – {{
-                    post.max_price }} ₽</p>
+                <p class="text-green-400 font-bold text-lg sm:text-lg">{{ format(post.min_price) }} – {{
+                    format(post.max_price) }} ₽</p>
 
                 <div class="flex items-center gap-1">
                     <img class="h-4 mb-0.5" src="@/shared/img/star.png" alt="">
@@ -28,6 +28,7 @@
 </template>
 
 <script setup lang="ts">
+import { format } from '~/src/shared/utils/text';
 import type { IPost } from './types';
 
 defineProps<{
