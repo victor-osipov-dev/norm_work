@@ -1,12 +1,14 @@
 <template>
     <div class="container mx-auto">
-        <div class="order-list grid gap-4">
+        <div class="order-list grid gap-4 mb-6">
             <AppOrder 
                 v-for="order in order_store.orders" 
                 :order
                 @toggle:is_favorite="toggleFavorite(order)" 
             ></AppOrder>
         </div>
+
+        <v-pagination :length="4"></v-pagination>
     </div>
 </template>
 

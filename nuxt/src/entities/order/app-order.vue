@@ -1,7 +1,7 @@
 <template>
     <div class="app-order gap-0 xl:grid xl:grid-cols-subgrid xl:col-span-3 bg-pink-50 rounded-md overflow-hidden">
 
-        <div class="bg-gray-800 text-white p-4 flex xl:flex-col items-center justify-between">
+        <div class="bg-gray-800 text-white p-4 flex xl:flex-col items-center justify-between xl:justify-start">
             <div class="flex items-center gap-1 xl:gap-0 xl:flex-col xl:mb-4">
                 <img class="w-10 rounded-full mr-1 xl:!mr-0 xl:mb-2" src="@/shared/img/avatar.avif" alt="avatar">
                 <p>{{ order.user.first_name }}</p>
@@ -17,7 +17,7 @@
 
         <div class="p-4 max-w-[50rem]">
             <h2 class="mb-2 text-xl">{{ order.title }}</h2>
-            <p class="break-words">{{ order.description }}</p>
+            <p class="break-words whitespace-pre-wrap">{{ order.description }}</p>
         </div>
 
 
