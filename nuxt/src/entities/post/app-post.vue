@@ -13,7 +13,7 @@
                     format(post.max_price) }} ₽</p>
 
                 <div class="flex items-center gap-1">
-                    <img class="h-4 mb-0.5" src="@/shared/img/star.png" alt="">
+                    <Icon class="bg-yellow-400 mb-0.5" name="streamline:star-1-solid" size="1em" />
                     <p>{{ post.user.rating }}</p>
                     <p>({{ post.user.number_reviews }})</p>
                 </div>
@@ -29,7 +29,7 @@
 
 <script setup lang="ts">
 import { format } from '~/src/shared/utils/text';
-import type { IPost } from './types';
+import type { IPost } from './post_types';
 
 defineProps<{
     post: IPost

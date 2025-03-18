@@ -13,8 +13,8 @@
 </template>
 
 <script lang="ts" setup>
-import { usePostStore } from '../entities/post/store';
-import type { IPost } from '../entities/post/types';
+import { usePostStore } from '../entities/post/post_store';
+import type { IPost } from '../entities/post/post_types';
 
 const props = defineProps<{
     post_type: string

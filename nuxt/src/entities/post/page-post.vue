@@ -7,10 +7,10 @@
             
                 <div
                     class="app-post__header-content p-1 flex items-center justify-between px-2 text-white bg-gray-900">
-                    <p class="text-green-400 text-xl font-bold">{{ post.min_price }} – {{ post.max_price }} ₽</p>
+                    <p class="text-green-400 text-xl font-bold font-[Montserrat]">{{ post.min_price }} – {{ post.max_price }} ₽</p>
 
                     <div class="flex items-center gap-1 ">
-                        <img class="h-4 mb-0.5" src="@/shared/img/star.png" alt="">
+                        <Icon class="bg-yellow-400 mb-0.5" name="streamline:star-1-solid" size="1em" />
                         <p>{{ post.user.rating }}</p>
                         <p>({{ post.user.number_reviews }})</p>
                     </div>
@@ -43,7 +43,7 @@
 </template>
 
 <script setup lang="ts">
-import type { IPost } from './types';
+import type { IPost } from './post_types';
 
 const props = defineProps<{
     post: IPost

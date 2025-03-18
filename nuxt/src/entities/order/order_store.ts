@@ -1,4 +1,4 @@
-import type { IOrder } from "./types"
+import type { IOrder } from "./order_types"
 
 export const useOrderStore =  defineStore('order', () => {
     const orders = ref<IOrder[]>([

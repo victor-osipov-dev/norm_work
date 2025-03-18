@@ -1,4 +1,4 @@
-import type { IPost } from "./types" 
+import type { IPost } from "./post_types" 
 
 export const usePostStore = defineStore('post', () => {
     const posts = ref<IPost[]>([

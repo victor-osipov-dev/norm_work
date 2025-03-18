@@ -13,8 +13,8 @@
 </template>
 
 <script setup lang="ts">
-import { useOrderStore } from '../entities/order/store';
-import type { IOrder } from '../entities/order/types';
+import { useOrderStore } from '../entities/order/order_store';
+import type { IOrder } from '../entities/order/order_types';
 
 const order_store = useOrderStore()
 

@@ -47,7 +47,7 @@
 
 <script setup lang="ts">
 import { format } from '~/src/shared/utils/text';
-import type { IOrder } from './types';
+import type { IOrder } from './order_types';
 
 const props = defineProps<{
     order: IOrder

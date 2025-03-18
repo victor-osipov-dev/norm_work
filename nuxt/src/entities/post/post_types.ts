@@ -1,4 +1,4 @@
-import type { IUser } from "../user/types";
+import type { IUser } from "../user/user_types";
 
 export interface IPost {
     id: number,
