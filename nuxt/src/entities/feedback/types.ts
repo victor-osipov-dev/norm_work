@@ -4,6 +4,7 @@ export interface IFeedback {
     id: number,
     user: IUser,
     data: {
+        id: number,
         text: string,
         estimation: number,
         files: string[],

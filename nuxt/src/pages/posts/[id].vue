@@ -5,7 +5,7 @@
 
     <div class="container mx-auto">
         <div class="feedbacks flex flex-col gap-4">
-            <Feedback v-for="feedback in feedback_store.feedbacks" :feedback></Feedback>
+            <Feedback v-for="feedback in feedback_store.feedbacks" :feedback :key="feedback.id"></Feedback>
         </div>
     </div>
 </template>

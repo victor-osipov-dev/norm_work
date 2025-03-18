@@ -11,7 +11,8 @@
         </div>
 
         <div class="flex flex-col gap-[1px] bg-gray-300">
-            <div class="bg-pink-50 py-4 flex flex-col gap-2" v-for="row in feedback.data">
+
+            <div class="bg-pink-50 py-4 flex flex-col gap-2" v-for="row in rows" :key="row.id">
                 <div class="flex gap-4 items-center">
                     <Rating readonly v-model="row.estimation">
                         <template #onicon>
@@ -31,6 +32,7 @@
                     <img class="h-[10rem]" v-for="file in row.files"  :src="file" alt="">
                 </div>
             </div>
+
         </div>
     </div>
 </template>
@@ -38,9 +40,14 @@
 <script setup lang="ts">
 import type { IFeedback } from './types';
 
-defineProps<{
+const props = defineProps<{
     feedback: IFeedback
 }>()
+
+
+const rows = computed(() => {
+    return props.feedback.data.toReversed()
+})
 </script>
 
 <style scoped>
