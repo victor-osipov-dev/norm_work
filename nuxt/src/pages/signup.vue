@@ -1,22 +1,22 @@
 <template>
     <div class="container mx-auto flex-grow-1 grid place-items-center">
-        <form class="bg-sky-300 p-8 rounded-md text-white " @click.prevent action="#">
+        <form @submit.prevent="register" class="bg-sky-300 p-8 rounded-md text-white " action="#">
             <h2 class="text-3xl mb-8 text-center">Регистрация</h2>
 
             <div class="grid gap-4 mb-8 xs:grid-cols-2">
-                <AppInput placeholder="Имя"></AppInput>
-                <AppInput placeholder="Фамилия"></AppInput>
+                <AppInput v-model="form.first_name" placeholder="Имя"></AppInput>
+                <AppInput v-model="form.last_name" placeholder="Фамилия"></AppInput>
 
                 <hr class="border-slate-100 xs:hidden">
 
-                <AppInput placeholder="Email"></AppInput>
-                <AppInput placeholder="Пароль"></AppInput>
+                <AppInput v-model="form.email" placeholder="Email"></AppInput>
+                <AppInput v-model="form.password" placeholder="Пароль"></AppInput>
             </div>
 
             <div class="flex justify-between">
                 <NuxtLinkLocale class="hover:underline block self-end" :to="{name: 'signin'}">Войти</NuxtLinkLocale>
 
-                <AppButton class="bg-white">Регистрация</AppButton>
+                <AppButton type="submit" class="bg-white">Регистрация</AppButton>
             </div>
         </form>
     </div>
@@ -26,6 +26,29 @@
 definePageMeta({
     name: 'signup'
 })
+
+const cookie = useCookie('XSRF-TOKEN')
+
+const locale_path = useLocalePath()
+
+const form = ref({
+    'first_name': 'Vi',
+    'last_name': 'Os',
+    'email': 'vios@gmail.com',
+    'password': '1234',
+})
+
+
+async function register() {
+    console.log(123)
+    await $fetch('http://localhost:8000/sanctum/csrf-cookie', {credentials: 'include'})
+
+    $fetch('http://localhost:8000/user/register', { body: form.value, credentials: 'include', method: 'POST', headers: { 'X-XSRF-TOKEN': cookie.value }})
+    .then(res => {
+        console.log(res)
+        navigateTo(locale_path({name: 'home'}));
+    })
+}
 </script>
 
 <style scoped>
