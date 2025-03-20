@@ -70,6 +70,6 @@ class AuthController extends Controller
 
         Auth::login($user);
 
-        return response($user);
+        return redirect()->away("http://localhost:3000?auth_profider=$request->type");
     }
 }

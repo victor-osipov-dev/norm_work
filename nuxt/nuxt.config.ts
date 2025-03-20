@@ -12,7 +12,7 @@ export default defineNuxtConfig({
       '@nuxtjs/i18n',
       '@primevue/nuxt-module',
       '@nuxt/icon',
-      '@nuxtjs/html-validator',
+    //   '@nuxtjs/html-validator',
     ],
     components: [
         {

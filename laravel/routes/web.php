@@ -12,3 +12,4 @@ Route::get('/auth/redirect/{type}', [AuthController::class, 'auth_redirect'])->w
 Route::get('/auth/callback/{type}', [AuthController::class, 'auth_callback'])->whereIn('type', ['google', 'yandex']);
 
 Route::get('/posts', [PostController::class, 'index_by_category']);
+Route::get('/user/profile/{user}', [UserController::class, 'show']);
