@@ -1,4 +1,4 @@
-import type { IFeedback } from "./types"
+import type { IFeedback } from "./feedback_types"
 
 export const useFeedbackStore = defineStore('feedback', () => {
     const feedbacks = ref<IFeedback[]>([

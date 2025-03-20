@@ -1,9 +1,9 @@
 <template>
     <div class="app-post bg-pink-50 p-2 rounded-md grid grid-rows-subgrid ">
         <div class="app-post__header relative overflow-hidden rounded">
-            <NuxtLinkLocale :to="{name: 'post', params: {id: post.id}}">
+            <NuxtLinkLocale  :to="{name: 'post', params: {id: post.id}}">
                 <img class="app-post__img row-start-1 w-full cursor-pointer" v-if="post.images?.[0]"
-                    :src="post.images[0]" alt="">
+                    :src="post.images[0]" alt="post-preview">
             </NuxtLinkLocale>
 
 
@@ -21,7 +21,7 @@
         </div>
 
         <h3 class="text-lg row-start-2  hover:underline cursor-pointer">
-            <NuxtLinkLocale :to="{name: 'post', params: {id: post.id}}">{{ post.title }}</NuxtLinkLocale>
+            <NuxtLinkLocale :to="{name: 'post', params: {id: post.id}}" alt="post page">{{ post.title }}</NuxtLinkLocale>
         </h3>
         <p class="row-start-3 line-clamp-4">{{ post.description }}</p>
     </div>

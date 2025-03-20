@@ -11,7 +11,7 @@ import type { IPost } from '../entities/post/post_types';
 
 
 defineProps<{
-    posts: IPost[]
+    posts: IPost[] | null
 }>()
 
 

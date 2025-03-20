@@ -25,6 +25,7 @@ class AuthController extends Controller
             ], 401);
         }
 
+
         $request->session()->regenerate();
  
         return response([

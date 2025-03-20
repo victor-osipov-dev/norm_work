@@ -3,13 +3,13 @@
         <div class="bg-gray-900 text-white mt-6">
             <div class="container mx-auto flex flex-col-reverse md:flex-row gap-4 justify-between md:px-2 md:py-4">
                 <nav class="flex-col md:flex-row gap-5 text-sm md:gap-20 hidden md:flex">
-                    <ul v-for="nav in nav_list" class="flex flex-col gap-1">
+                    <div v-for="nav in nav_list" class="flex flex-col gap-1">
                         <h3 class="text-lg">{{ nav.title }}</h3>
 
-                        <li v-for="link in nav.links">
+                        <div v-for="link in nav.links">
                             <NuxtLinkLocale>{{ link.name }}</NuxtLinkLocale>
-                        </li>
-                    </ul>
+                        </div>
+                    </div>
 
                 </nav>
 

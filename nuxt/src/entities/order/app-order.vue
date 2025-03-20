@@ -9,7 +9,7 @@
             </div>
 
             <div class="flex items-center gap-1">
-                <img class="h-4 mb-0.5" src="@/shared/img/star.png" alt="">
+                <Icon class="bg-yellow-400 mb-0.5" name="streamline:star-1-solid" size="1em" />
                 <p>{{ order.user.rating }}</p>
                 <p>({{ order.user.number_reviews }})</p>
             </div>

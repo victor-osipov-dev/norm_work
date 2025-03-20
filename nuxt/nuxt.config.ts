@@ -12,6 +12,7 @@ export default defineNuxtConfig({
       '@nuxtjs/i18n',
       '@primevue/nuxt-module',
       '@nuxt/icon',
+      '@nuxtjs/html-validator',
     ],
     components: [
         {
@@ -38,6 +39,7 @@ export default defineNuxtConfig({
         ],
         lazy: true,
         restructureDir: './src/app/i18n',
+        baseUrl: ''
     },
     dir: {
         pages: './src/pages',

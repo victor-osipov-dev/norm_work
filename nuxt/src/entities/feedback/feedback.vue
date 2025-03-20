@@ -29,7 +29,7 @@
                 <p>{{ row.text }}</p>
 
                 <div class="flex flex-wrap gap-4">
-                    <img class="h-[10rem]" v-for="file in row.files"  :src="file" alt="">
+                    <img class="h-[10rem]" v-for="file in row.files"  :src="file" alt="result-file">
                 </div>
             </div>
 
@@ -38,7 +38,7 @@
 </template>
 
 <script setup lang="ts">
-import type { IFeedback } from './types';
+import type { IFeedback } from './feedback_types';
 
 const props = defineProps<{
     feedback: IFeedback

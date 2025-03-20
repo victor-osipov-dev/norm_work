@@ -1,7 +1,7 @@
 <template>
     <div class="container mx-auto">
         <div class="grid xs:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-            <AppPost v-for="post in posts" :post="post"></AppPost>
+            <AppPost v-for="post in post_store.posts" :post="post"></AppPost>
         </div>
     </div>
 </template>
@@ -15,7 +15,6 @@ const props = defineProps<{
 }>()
 
 const post_store = usePostStore()
-const posts: Ref<IPost[]> = computed(() => post_store.getPostsType(props.post_type))
 </script>
 
 <style scoped>
