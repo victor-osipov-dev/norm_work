@@ -34,12 +34,12 @@ export default defineNuxtConfig({
         strategy: 'prefix_and_default',
         defaultLocale: 'ru',
         locales: [
-            { code: 'en', language: 'en-US', file: 'en-US.json' },
-            { code: 'ru', language: 'ru-RU', file: 'ru-RU.json' }
+            { code: 'en', language: 'en-US', file: 'en-US.ts' },
+            { code: 'ru', language: 'ru-RU', file: 'ru-RU.ts' }
         ],
         lazy: true,
         restructureDir: './src/app/i18n',
-        baseUrl: ''
+        baseUrl: 'http://localhost:3000'
     },
     dir: {
         pages: './src/pages',
@@ -53,4 +53,14 @@ export default defineNuxtConfig({
             }
         },
     },
+    vuetify: {
+        moduleOptions: {
+            styles: {
+                configFile: './src/shared/styles/settings.scss'
+            }
+        },
+        vuetifyOptions: {
+            /* vuetify options */
+        }
+    }
 })

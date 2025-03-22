@@ -1,5 +1,5 @@
 <template>
-    <div  class="flex flex-column gap-6 min-h-dvh">
+    <div  class="flex flex-col gap-6 min-h-dvh">
         <AppHeader></AppHeader>
 
         <slot>
@@ -11,11 +11,11 @@
 </template>
 
 <script lang="ts" setup>
-const i18nHead = useLocaleHead()
+// const i18nHead = useLocaleHead()
 
-useHead(() => ({
-  htmlAttrs: {
-    lang: i18nHead.value.htmlAttrs!.lang
-  },
-}))
+// useHead(() => ({
+//   htmlAttrs: {
+//     lang: i18nHead.value.htmlAttrs!.lang
+//   },
+// }))
 </script>

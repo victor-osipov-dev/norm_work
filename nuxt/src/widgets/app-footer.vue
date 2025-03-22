@@ -13,8 +13,8 @@
 
                 </nav>
 
-                <v-expansion-panels class="md:!hidden " variant="accordion" elevation="0">
-                    <v-expansion-panel v-for="nav in nav_list" class="!bg-gray-900 text-white" :title="nav.title">
+                <v-expansion-panels class="md:hidden" variant="accordion" elevation="0">
+                    <v-expansion-panel v-for="nav in nav_list" class="bg-gray-900 text-white" :title="nav.title">
                         <template #text>
                             <li v-for="link in nav.links">
                                 <NuxtLinkLocale>{{ link.name }}</NuxtLinkLocale>

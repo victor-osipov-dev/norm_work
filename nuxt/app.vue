@@ -8,4 +8,5 @@
 
 <script setup>
 import "./src/shared/styles/main.scss";
+
 </script>

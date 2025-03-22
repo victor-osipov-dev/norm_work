@@ -3,7 +3,7 @@
         <h1 class="text-3xl text-center">NormWork - простая фриланс биржа</h1>
     </div>
 
-    {{ user }}
+    <!-- {{ user }} -->
 
     <CategorySearch></CategorySearch>
 
@@ -30,7 +30,7 @@ definePageMeta({
 const user = ref<any>(null)
 // const { data: user } = useFetch('http://localhost:8000/user/profile/1')
 // useAsyncData(() => $fetch('http://localhost:8000/user/profile/1').then(res => user.value = res))
-callOnce(() => $fetch<PostsByCategory>('http://localhost:8000/user/profile/4').then(res => user.value = res), {mode: 'navigation'})
+// callOnce(() => $fetch<PostsByCategory>('http://localhost:8000/user/profile/4').then(res => user.value = res), {mode: 'navigation'})
 useHead({
     title: 'Главная',
 })
