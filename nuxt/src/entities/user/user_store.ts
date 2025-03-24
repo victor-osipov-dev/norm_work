@@ -17,18 +17,7 @@ export const useUserStore = defineStore('user', () => {
 
     const user = ref<IUser | null>(null)
 
-    async function fetchUser(driver_type?: string, token?: string) {
-
-        // await $fetch('http://localhost:8000/sanctum/csrf-cookie', { credentials: 'include' })
-        // $fetch<unknown, any, any>('http://localhost:8000/test', {credentials: 'include'}).then((res) => {
-        //     console.log(res);
-            
-        // })
-        if (driver_type && token) {
-            await $fetch('http://localhost:8000/auth/callback/' + driver_type + '?token=' + token, { credentials: 'include' })
-        }
-
-
+    async function fetchUser() {
         const res = await $fetch<unknown, any, any>('http://localhost:8000/user/profile', {
             credentials: 'include', 
             headers: {

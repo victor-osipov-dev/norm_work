@@ -2,9 +2,6 @@
     <div class="container mx-auto mb-4">
         <h1 class="text-3xl text-center">NormWork - простая фриланс биржа</h1>
     </div>
-    <div>{{ route.query.auth_profider }}</div>
-    <div>{{ route.query.token }}</div>
-    <!-- {{ user_store.user ? user_store.user : 'user is missing' }} -->
 
     <CategorySearch></CategorySearch>
 
@@ -29,15 +26,22 @@ useHead({
     title: 'Главная',
 })
 
-
+const localePath = useLocalePath()
 const user_store = useUserStore()
 const route = useRoute()
+const router = useRouter()
 
 
-onMounted(() => {
-    console.log(route.query.auth_profider, route.query.token);
+onMounted(async () => {
+    const driver_type = route.query.auth_profider
+    const token = route.query.token
     
-    user_store.fetchUser(route.query.auth_profider, route.query.token)
+    if (route.query.auth_profider && route.query.token) {
+        await $fetch('http://localhost:8000/auth/callback/' + driver_type + '?token=' + token, { credentials: 'include' })
+        router.replace(localePath({name: 'home'}))
+    }
+    
+    user_store.fetchUser()
 })
 
 const { data: posts_by_category } = useFetch<PostsByCategory>('http://127.0.0.1:8000/posts/by_category')
