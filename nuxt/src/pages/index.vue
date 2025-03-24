@@ -2,8 +2,9 @@
     <div class="container mx-auto mb-4">
         <h1 class="text-3xl text-center">NormWork - простая фриланс биржа</h1>
     </div>
-
-    {{ user_store.user ? user_store.user : 'user is missing' }}
+    <div>{{ route.query.auth_profider }}</div>
+    <div>{{ route.query.token }}</div>
+    <!-- {{ user_store.user ? user_store.user : 'user is missing' }} -->
 
     <CategorySearch></CategorySearch>
 
@@ -30,8 +31,13 @@ useHead({
 
 
 const user_store = useUserStore()
+const route = useRoute()
+
+
 onMounted(() => {
-    user_store.fetchUser()
+    console.log(route.query.auth_profider, route.query.token);
+    
+    user_store.fetchUser(route.query.auth_profider, route.query.token)
 })
 
 const { data: posts_by_category } = useFetch<PostsByCategory>('http://127.0.0.1:8000/posts/by_category')
