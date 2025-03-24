@@ -1,5 +1,5 @@
 <template>
-    <div class="container mx-auto flex-grow-1 grid place-items-center">
+    <div class="container mx-auto flex-grow grid place-items-center">
         <form @submit.prevent="register" class="bg-sky-300 p-8 rounded-md text-white " action="#">
             <h2 class="text-3xl mb-8 text-center">Регистрация</h2>
 
@@ -27,7 +27,7 @@ definePageMeta({
     name: 'signup'
 })
 
-const token = useCookie('XSRF-TOKEN')
+const xsrf_token = useCookie('XSRF-TOKEN')
 const locale_path = useLocalePath()
 
 const form = ref({
@@ -39,9 +39,9 @@ const form = ref({
 
 
 async function register() {
-    await $fetch('http://localhost:8000/sanctum/csrf-cookie', {credentials: 'include'})
+    await $fetch('http://localhost:8000/sanctum/csrf-cookie', { credentials: 'include' })
 
-    $fetch<unknown, any, any>('http://localhost:8000/user/register', { body: form.value, credentials: 'include', method: 'POST', headers: {'X-XSRF-TOKEN': token.value}})
+    $fetch<unknown, any, any>('http://localhost:8000/user/register', { body: form.value, credentials: 'include', method: 'POST', headers: {'X-XSRF-TOKEN': xsrf_token.value}})
     .then(() => {
         navigateTo(locale_path({name: 'home'}));
     })

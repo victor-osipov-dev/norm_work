@@ -3,7 +3,7 @@
         <h1 class="text-3xl text-center">NormWork - простая фриланс биржа</h1>
     </div>
 
-    <!-- {{ user }} -->
+    {{ user_store.user ? user_store.user : 'user is missing' }}
 
     <CategorySearch></CategorySearch>
 
@@ -24,27 +24,20 @@ import type { Categories, PostsByCategory } from '../shared/types';
 definePageMeta({
     name: 'home'
 })
-
-
-// const user_store = useUserStore()
-const user = ref<any>(null)
-// const { data: user } = useFetch('http://localhost:8000/user/profile/1')
-// useAsyncData(() => $fetch('http://localhost:8000/user/profile/1').then(res => user.value = res))
-// callOnce(() => $fetch<PostsByCategory>('http://localhost:8000/user/profile/4').then(res => user.value = res), {mode: 'navigation'})
 useHead({
     title: 'Главная',
 })
 
 
+const user_store = useUserStore()
+onMounted(() => {
+    user_store.fetchUser()
+})
 
-const data = ref<PostsByCategory | null>(null)
-// const { data } = useFetch< Partial<Record<categories, IPost[]>> >('http://127.0.0.1:8000/posts', {
-//     deep: true
-// })
-callOnce(() => $fetch<PostsByCategory>('http://127.0.0.1:8000/posts').then(res => data.value = res), {mode: 'navigation'})
+const { data: posts_by_category } = useFetch<PostsByCategory>('http://127.0.0.1:8000/posts/by_category')
 
 function getCategoryPosts(type: Categories): IPost[] {
-    return data.value?.[type] ?? []
+    return posts_by_category.value?.[type] ?? []
 }
 
 const programming_posts = computed(() => getCategoryPosts('programming'))
@@ -53,7 +46,6 @@ const video_audio_posts = computed(() => getCategoryPosts('video/audio'))
 const texts_posts = computed(() => getCategoryPosts('texts'))
 const marketing_posts = computed(() => getCategoryPosts('marketing'))
 const seo_posts = computed(() => getCategoryPosts('seo'))
-
 </script>
 
 <style lang="scss" scoped>

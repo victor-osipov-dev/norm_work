@@ -1,7 +1,7 @@
 <template>
     <div class="app-post bg-pink-50 rounded-md flex  p-8 gap-8">
 
-        <div class="app-post__header overflow-hidden rounded self-start flex-grow-1 max-w-[50rem]">
+        <div class="app-post__header overflow-hidden rounded self-start flex-grow max-w-[50rem]">
             <div class="rounded-md overflow-hidden mb-6">
                 <img class="app-post__img w-full " v-if="post.images?.[0]" :src="post.images[0]" alt="">
             

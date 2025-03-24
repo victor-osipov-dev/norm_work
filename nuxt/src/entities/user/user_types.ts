@@ -4,4 +4,5 @@ export interface IUser {
     avatar?: string,
     rating: number,
     number_reviews: number,
+    balance: number
 }

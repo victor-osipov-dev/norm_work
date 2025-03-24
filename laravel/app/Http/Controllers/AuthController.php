@@ -29,7 +29,20 @@ class AuthController extends Controller
         $request->session()->regenerate();
  
         return response([
-            'message' => 'Success signin'
+            'message' => 'Success signin',
+        ]);
+    }
+
+    public function logout(Request $request)
+    {
+        Auth::guard('web')->logout();
+    
+        $request->session()->invalidate();
+    
+        $request->session()->regenerateToken();
+    
+        return response([
+            'message' => 'Success logout'
         ]);
     }
 

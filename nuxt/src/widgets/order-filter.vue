@@ -22,8 +22,8 @@
             </div>
         </div>
 
-        <div class="flex w-full xl:w-auto min-h-10 max-h-12 md:items-stretch md:flex-grow-1 lg:min-w-[25rem] h-20 xl:min-w-[30rem] md:mr-4">
-            <AppInput @focus="onFocus" class="rounded-r-none outline-yellow-400 flex-grow-1 "
+        <div class="flex w-full xl:w-auto min-h-10 max-h-12 md:items-stretch md:flex-grow lg:min-w-[25rem] h-20 xl:min-w-[30rem] md:mr-4">
+            <AppInput @focus="onFocus" class="rounded-r-none outline-yellow-400 flex-grow "
                 :placeholder="$t('search')" v-model="search"></AppInput>
             <AppButton class="rounded-l-none bg-yellow-400">{{ $t('find') }}</AppButton>
         </div>

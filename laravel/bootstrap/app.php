@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Middleware\JsonResponseMiddleware;
+use Illuminate\Auth\AuthenticationException;
 use Illuminate\Foundation\Application;
 use Illuminate\Foundation\Configuration\Exceptions;
 use Illuminate\Foundation\Configuration\Middleware;
@@ -13,10 +14,15 @@ return Application::configure(basePath: dirname(__DIR__))
         health: '/up',
     )
     ->withMiddleware(function (Middleware $middleware) {
-        $middleware->api(prepend: [
+        $middleware->statefulApi();
+        $middleware->web(prepend: [
             JsonResponseMiddleware::class,
         ]);
     })
     ->withExceptions(function (Exceptions $exceptions) {
-        //
+        $exceptions->render(function (AuthenticationException $e) {
+            return response([
+                'message' => 'Token is missing or invalid'
+            ], 401);
+        });
     })->create();

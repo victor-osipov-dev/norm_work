@@ -11,5 +11,9 @@ Route::post('/auth/signin', [AuthController::class, 'signin']);
 Route::get('/auth/redirect/{type}', [AuthController::class, 'auth_redirect'])->whereIn('type', ['google', 'yandex']);
 Route::get('/auth/callback/{type}', [AuthController::class, 'auth_callback'])->whereIn('type', ['google', 'yandex']);
 
-Route::get('/posts', [PostController::class, 'index_by_category']);
-Route::get('/user/profile/{user}', [UserController::class, 'show']);
+Route::get('/posts/by_category', [PostController::class, 'index_by_category']);
+
+Route::middleware(['auth:sanctum'])->group(function () {
+    Route::get('/user/profile', [UserController::class, 'show']);
+    Route::get('/user/logout', [AuthController::class, 'logout']);
+});

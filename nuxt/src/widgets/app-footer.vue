@@ -1,5 +1,5 @@
 <template>
-    <div class="flex-grow-1 flex flex-col justify-end">
+    <div class="flex-grow flex flex-col justify-end">
         <div class="bg-gray-900 text-white mt-6">
             <div class="container mx-auto flex flex-col-reverse md:flex-row gap-4 justify-between md:px-2 md:py-4">
                 <nav class="flex-col md:flex-row gap-5 text-sm md:gap-20 hidden md:flex">
