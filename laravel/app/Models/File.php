@@ -5,15 +5,16 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Token extends Model
+class File extends Model
 {
-    /** @use HasFactory<\Database\Factories\TokenFactory> */
+    /** @use HasFactory<\Database\Factories\FileFactory> */
     use HasFactory;
 
     protected $guarded = [];
 
 
-    function user() {
-        return $this->belongsTo(User::class, 'user_id');
+
+    function fileable() {
+        return $this->morphTo();
     }
 }

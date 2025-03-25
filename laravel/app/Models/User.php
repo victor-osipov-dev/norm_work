@@ -43,8 +43,7 @@ class User extends Authenticatable
         ];
     }
 
-
-    function oauth_tokens() {
-        return $this->hasMany(Token::class, 'user_id');
+    function files() {
+        return $this->morphMany(File::class, 'fileable');
     }
 }
