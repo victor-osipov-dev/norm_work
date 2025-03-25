@@ -52,11 +52,7 @@ class AuthController extends Controller
     }
 
     function auth_callback(Request $request) {
-        if ($request->token) {
-            $user_data = Socialite::driver($request->type)->userFromToken($request->token);
-        } else {
-            $user_data = Socialite::driver($request->type)->user();
-        }
+        $user_data = Socialite::driver($request->type)->user();
 
         $name = $user_data->getName();
         $email = $user_data->getEmail();
@@ -87,12 +83,7 @@ class AuthController extends Controller
 
         Auth::login($user);
 
-        if ($request->token) {
-            return response([
-                'message' => 'Sign in'
-            ]);
-        }
-        return redirect()->away("http://localhost:3000?auth_profider=$request->type&token=$user_data->token");
+        return redirect()->away("http://localhost:3000");
     }
 
 

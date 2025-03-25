@@ -9,6 +9,7 @@ export const useFeedbackStore = defineStore('feedback', () => {
                 last_name: 'Osipov',
                 rating: 4.5,
                 number_reviews: 2,
+                balance: 0
             },
             data: [
                 {
@@ -97,6 +98,7 @@ export const useFeedbackStore = defineStore('feedback', () => {
                 last_name: 'Test',
                 rating: 5,
                 number_reviews: 2,
+                balance: 0
             },
             data: [
                 {

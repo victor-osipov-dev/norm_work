@@ -33,14 +33,6 @@ const router = useRouter()
 
 
 onMounted(async () => {
-    const driver_type = route.query.auth_profider
-    const token = route.query.token
-    
-    if (route.query.auth_profider && route.query.token) {
-        await $fetch('http://localhost:8000/auth/callback/' + driver_type + '?token=' + token, { credentials: 'include' })
-        router.replace(localePath({name: 'home'}))
-    }
-    
     user_store.fetchUser()
 })
 

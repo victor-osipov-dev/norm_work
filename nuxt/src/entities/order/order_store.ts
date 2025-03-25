@@ -15,6 +15,7 @@ export const useOrderStore =  defineStore('order', () => {
                 last_name: 'Osipov',
                 number_reviews: 5,
                 rating: 5,
+                balance: 0
             },
             number_feedbacks: 2,
             min_price: 2000,
@@ -31,6 +32,7 @@ export const useOrderStore =  defineStore('order', () => {
                 last_name: 'Osipov',
                 number_reviews: 15,
                 rating: 5,
+                balance: 0
             },
             number_feedbacks: 10,
             min_price: 30000,
@@ -53,6 +55,7 @@ export const useOrderStore =  defineStore('order', () => {
                 last_name: 'Osipov',
                 number_reviews: 5,
                 rating: 5,
+                balance: 0
             },
             number_feedbacks: 7,
             min_price: 60000,
