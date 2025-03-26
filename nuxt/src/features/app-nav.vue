@@ -6,8 +6,9 @@
         </div>
 
         <div @click="navigateTo(localePath({name: 'profile'}))" class="border border-gray-400 rounded-md px-2 py-1 font-[Montserrat]" v-if="user_store.is_login">
-            {{ user_store.user?.balance }} ₽
+            {{ user_store.user?.balance ?? 0 }} ₽
         </div>
+        
         <AppButton v-else @click="navigateTo(localePath({name: 'signin'}))" class="cursor-pointer bg-white">{{ $t('signin') }}</AppButton>
     </div>
 </template>

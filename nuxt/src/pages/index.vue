@@ -15,9 +15,7 @@
 </template>
 
 <script lang="ts" setup>
-import type { IPost } from '../entities/post/post_types';
-import { useUserStore } from '../entities/user/user_store';
-import type { Categories, PostsByCategory } from '../shared/types';
+import { usePostStore } from '../entities/post/post_store';
 
 definePageMeta({
     name: 'home'
@@ -26,28 +24,14 @@ useHead({
     title: 'Главная',
 })
 
-const localePath = useLocalePath()
-const user_store = useUserStore()
-const route = useRoute()
-const router = useRouter()
+const post_store = usePostStore()
 
-
-onMounted(async () => {
-    user_store.fetchUser()
-})
-
-const { data: posts_by_category } = useFetch<PostsByCategory>('http://127.0.0.1:8000/posts/by_category')
-
-function getCategoryPosts(type: Categories): IPost[] {
-    return posts_by_category.value?.[type] ?? []
-}
-
-const programming_posts = computed(() => getCategoryPosts('programming'))
-const design_posts = computed(() => getCategoryPosts('design'))
-const video_audio_posts = computed(() => getCategoryPosts('video/audio'))
-const texts_posts = computed(() => getCategoryPosts('texts'))
-const marketing_posts = computed(() => getCategoryPosts('marketing'))
-const seo_posts = computed(() => getCategoryPosts('seo'))
+const programming_posts = computed(() => post_store.getCategoryPosts('programming'))
+const design_posts = computed(() => post_store.getCategoryPosts('design'))
+const video_audio_posts = computed(() => post_store.getCategoryPosts('video/audio'))
+const texts_posts = computed(() => post_store.getCategoryPosts('texts'))
+const marketing_posts = computed(() => post_store.getCategoryPosts('marketing'))
+const seo_posts = computed(() => post_store.getCategoryPosts('seo'))
 </script>
 
 <style lang="scss" scoped>

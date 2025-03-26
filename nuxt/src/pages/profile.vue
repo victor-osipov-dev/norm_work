@@ -34,7 +34,7 @@ definePageMeta({
 
 const xsrf_token = useCookie('XSRF-TOKEN')
 const user_store = useUserStore()
-user_store.fetchUser()
+// user_store.fetchUser()
 
 
 async function logout() {
