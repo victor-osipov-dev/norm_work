@@ -7,10 +7,14 @@
     "license": "MIT",
     "require": {
         "php": "^8.2",
+        "elasticsearch/elasticsearch": "^8.17",
+        "http-interop/http-factory-guzzle": "^1.2",
         "laravel/framework": "^12.0",
         "laravel/sanctum": "^4.0",
+        "laravel/scout": "^10.14",
         "laravel/socialite": "^5.18",
         "laravel/tinker": "^2.10.1",
+        "meilisearch/meilisearch-php": "^1.13",
         "socialiteproviders/google": "^4.1",
         "socialiteproviders/yandex": "^4.1"
     },

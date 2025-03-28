@@ -54,4 +54,14 @@ class PostController extends Controller
     {
         return response(Category::index());
     }
+
+
+    function search(Request $request) {
+        $data = $request->validate([
+            'query' => ['required', 'string']
+        ]);
+        $query = $data['query'];
+    
+        return Post::search($query)->get();
+    }
 }

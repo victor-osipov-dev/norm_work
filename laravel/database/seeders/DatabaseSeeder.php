@@ -8,6 +8,7 @@ use App\Models\Post;
 use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class DatabaseSeeder extends Seeder
 {
@@ -23,18 +24,15 @@ class DatabaseSeeder extends Seeder
             'email' => 'testtest@gmail.com',
         ]);
 
-        $posts = Post::insert(array_map(function ($post) {
+        foreach (Posts::index() as $post) {
+            $images = $post['images'];
             unset($post['images']);
-            return $post;
-        }, Posts::index()));
-        dd($posts);
 
-        // File::insert(array_map(function ($post) {
-        //     $images = $post['images'];
-        //     return [
-        //         'fileable_type' => '',
-        //         'fileable_id' => ''
-        //     ];
-        // }, Posts::index()));
+            $new_post = Post::create($post);
+
+            $new_post->files()->createMany(array_map(fn($image) => [
+                'url' => $image
+            ], $images));
+        }
     }
 }

@@ -15,7 +15,9 @@ return new class extends Migration
             $table->id();
 
             $table->morphs('fileable');
+            $table->string('url');
 
+            $table->index(['fileable_id', 'fileable_type']);
             $table->timestamps();
         });
     }

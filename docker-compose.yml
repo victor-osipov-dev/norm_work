@@ -1,0 +1,59 @@
+services:
+  laravel:
+    build:
+      context: ./laravel
+      dockerfile: Dockerfile
+    image: laravel_image
+    container_name: laravel_container
+    restart: unless-stopped
+    working_dir: /var/www
+    volumes:
+      - ./laravel:/var/www
+    networks:
+      - app-network
+
+  webserver:
+    image: nginx:alpine
+    container_name: webserver_container
+    restart: unless-stopped
+    ports:
+      - "8000:80"
+    volumes:
+      - ./laravel:/var/www
+      - ./docker-compose/nginx/conf.d/:/etc/nginx/conf.d/
+    networks:
+      - app-network
+    depends_on:
+      - laravel
+
+  db:
+    image: mysql:8.0
+    container_name: db_container
+    restart: unless-stopped
+    environment:
+      MYSQL_DATABASE: laravel
+      MYSQL_ROOT_PASSWORD: secret
+      MYSQL_PASSWORD: secret
+      MYSQL_USER: laravel
+    volumes:
+      - ./docker-compose/data/mysql:/var/lib/mysql
+    ports:
+      - "3306:3306"
+    networks:
+      - app-network
+  meilisearch:
+    image: getmeili/meilisearch:v1.13
+    container_name: meilisearch_container
+    ports:
+      - 7700:7700
+    environment:
+      MEILI_MASTER_KEY: MASTER_KEY
+    volumes:
+      - ./docker-compose/data/meilisearch:/meili_data
+    restart: unless-stopped
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
