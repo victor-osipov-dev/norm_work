@@ -1,4 +1,18 @@
 services:
+  nuxt:
+    build:
+      context: ./nuxt
+      dockerfile: Dockerfile
+    image: nuxt_image
+    container_name: nuxt_container
+    restart: unless-stopped
+    ports:
+      - 3000:3000
+    networks:
+      - app-network
+    depends_on:
+      - laravel
+
   laravel:
     build:
       context: ./laravel
@@ -11,6 +25,9 @@ services:
       - ./laravel:/var/www
     networks:
       - app-network
+    depends_on:
+      - db
+      - meilisearch
 
   webserver:
     image: nginx:alpine

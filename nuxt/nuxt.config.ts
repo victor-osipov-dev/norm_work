@@ -14,6 +14,11 @@ export default defineNuxtConfig({
       '@nuxt/icon',
     //   '@nuxtjs/html-validator',
     ],
+    runtimeConfig: {
+        public: {
+            'backend_url': 'laravel:8000'
+        }
+    },
     components: [
         {
             path: '~/src',
