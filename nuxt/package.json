@@ -13,7 +13,7 @@
     "@nuxt/icon": "^1.11.0",
     "@primeuix/themes": "^1.0.0",
     "@primevue/forms": "^4.3.2",
-    "nuxt": "^3.15.4",
+    "nuxt": "^3.16.1",
     "primevue": "^4.3.2",
     "vue": "^3.5.13",
     "vue-router": "^4.5.0"
@@ -23,7 +23,7 @@
     "@iconify-json/uil": "^1.2.3",
     "@nuxtjs/google-fonts": "^3.2.0",
     "@nuxtjs/html-validator": "^2.1.0",
-    "@nuxtjs/i18n": "^9.2.1",
+    "@nuxtjs/i18n": "^9.4.0",
     "@nuxtjs/tailwindcss": "^6.13.1",
     "@pinia/nuxt": "^0.10.1",
     "@primevue/nuxt-module": "^4.3.2",

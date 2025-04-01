@@ -44,7 +44,10 @@ export default defineNuxtConfig({
         ],
         lazy: true,
         restructureDir: './src/app/i18n',
-        baseUrl: 'http://localhost:3000'
+        baseUrl: 'http://localhost:3000',
+        bundle: {
+            optimizeTranslationDirective: false,
+        },
     },
     dir: {
         pages: './src/pages',
@@ -67,5 +70,6 @@ export default defineNuxtConfig({
         vuetifyOptions: {
             /* vuetify options */
         }
-    }
+    },
+    
 })

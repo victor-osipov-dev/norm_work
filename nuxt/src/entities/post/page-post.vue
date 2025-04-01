@@ -50,7 +50,7 @@ const props = defineProps<{
 }>()
 
 const description_arr = computed(() => {
-    return props.post.description.split('\n').filter(row => row != '')
+    return props.post.description.split('\n').map(row => row.trim()).filter(row => row != '')
 })
 </script>
 
