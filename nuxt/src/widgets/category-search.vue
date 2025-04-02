@@ -2,7 +2,7 @@
     <div class="bg-pink-50 container mx-auto p-2 rounded-md flex flex-col items-stretch justify-between gap-4 md:flex-row-reverse md:items-center">
         <div class="flex min-h-10 max-h-12 md:items-stretch md:flex-grow lg:min-w-[25rem] xl:min-w-[30rem] md:mr-4">
             <AppInput aria-label="Search input" type="search" class="rounded-r-none outline-yellow-400 flex-grow" :placeholder="$t('search')" v-model="search"></AppInput>
-            <AppButton class="rounded-l-none bg-yellow-400">{{ $t('find') }}</AppButton>
+            <AppButton @click="searchPosts" class="rounded-l-none bg-yellow-400">{{ $t('find') }}</AppButton>
         </div>
 
 
@@ -19,6 +19,12 @@
 
 <script setup lang="ts">
 const search = ref('')
+const localePath = useLocalePath()
+// const router = useRouter()
+
+function searchPosts() {
+    navigateTo(localePath({name: 'search-posts', query: { query: search.value }}))
+}
 </script>
 
 <style scoped>

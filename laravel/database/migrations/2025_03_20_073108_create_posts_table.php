@@ -21,6 +21,8 @@ return new class extends Migration
             $table->integer('max_price');
             $table->unsignedBigInteger('user_id');
 
+            $table->fullText(['title', 'description']);
+
             $table->timestamps();
         });
     }

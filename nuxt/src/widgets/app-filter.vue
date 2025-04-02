@@ -11,7 +11,9 @@
                     </span>
                 </p>
 
-                <v-range-slider hide-details v-model="range" :step="1000" :min="0" :max="100_000"></v-range-slider>
+                <ClientOnly>
+                    <v-range-slider hide-details v-model="range" :step="1000" :min="0" :max="100_000"></v-range-slider>
+                </ClientOnly>
             </div>
 
             <div class="md:w-[20rem] xl:content-center flex-shrink-0">
@@ -35,6 +37,10 @@ import { subcategories } from '../shared/consts';
 
 const select_el = useTemplateRef('select_el')
 
+
+// defineProps<{
+//     query: string
+// }>()
 
 async function onFocus(event: any) {
     const unwatch = watchEffect(() => {

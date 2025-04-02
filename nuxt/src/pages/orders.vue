@@ -1,5 +1,5 @@
 <template>
-    <OrderFilter class="mb-4"></OrderFilter>
+    <AppFilter class="mb-4"></AppFilter>
 
     <OrderList></OrderList>
 </template>

@@ -2,7 +2,7 @@ services:
   nuxt:
     build:
       context: ./nuxt
-      dockerfile: Dockerfile
+      dockerfile: Dockerfile.prod
     image: nuxt_image
     container_name: nuxt_container
     restart: unless-stopped
@@ -16,7 +16,7 @@ services:
   laravel:
     build:
       context: ./laravel
-      dockerfile: Dockerfile
+      dockerfile: Dockerfile.prod
     image: laravel_image
     container_name: laravel_container
     restart: unless-stopped

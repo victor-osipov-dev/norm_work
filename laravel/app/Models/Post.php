@@ -17,4 +17,16 @@ class Post extends Model
     function files() {
         return $this->morphMany(File::class, 'fileable');
     }
+
+
+    function user() {
+        return $this->belongsTo(User::class, 'user_id');
+    }
+
+    public function toSearchableArray(): array
+    {
+        $array = $this->toArray();
+
+        return $array;
+    }
 }

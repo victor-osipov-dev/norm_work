@@ -61,7 +61,26 @@ class PostController extends Controller
             'query' => ['required', 'string']
         ]);
         $query = $data['query'];
-    
-        return Post::search($query)->get();
+        // return $query;
+        return Post::search($query)
+        // ->query(fn ($query) => $query->with(['user', 'files']))
+        ->get()
+        ->map(fn ($post) => [
+            'id' => $post->id,
+            'title' => $post->title,
+            'description' => $post->description,
+            'images' => $post->files->pluck('url'),
+            'type' => $post->type,
+            'min_price' => $post->min_price,
+            'max_price' => $post->max_price,
+            'user' => [
+                'first_name' => $post->user->first_name,
+                'last_name' => $post->user->last_name,
+                'avatar' => $post->user->avatar,
+                'rating' => null,
+                'number_reviews' => 0,
+                'balance' => $post->user->balance
+            ]
+        ]);
     }
 }
