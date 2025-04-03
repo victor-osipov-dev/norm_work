@@ -1,6 +1,5 @@
 <template>
     <div class="container mx-auto mb-4">
-        hello
         <h1 class="text-3xl text-center">NormWork - простая фриланс биржа</h1>
     </div>
 

@@ -71,5 +71,14 @@ export default defineNuxtConfig({
             /* vuetify options */
         }
     },
-    
+    $development: {
+        vite: { 
+            server: {
+                watch: {
+                    usePolling: true,
+                    interval: 300 // ms
+                }
+            }
+        },
+    }
 })
