@@ -63,7 +63,7 @@ services:
     env_file:
       - app.env
     volumes:
-      - ./docker-compose/data/mysql:/var/lib/mysql
+      - mysql_data:/var/lib/mysql
     networks:
       - app-network
     healthcheck:
@@ -80,7 +80,7 @@ services:
     env_file:
       - app.env
     volumes:
-      - ./docker-compose/data/meilisearch:/meili_data
+      - meilisearch_data:/meili_data
     restart: unless-stopped
     networks:
       - app-network
@@ -90,5 +90,7 @@ networks:
     driver: bridge
 
 volumes:
+  mysql_data:
+  meilisearch_data: 
   node_modules:
   vendor:
