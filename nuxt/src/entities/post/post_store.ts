@@ -10,9 +10,7 @@ export const usePostStore = defineStore('post', () => {
         $fetch('http://localhost:8000/posts/' + id)
     }
 
-    const { data: posts_by_category } = useAsyncData<PostsByCategory>('post_store:posts_by_category', () => 
-        $fetch<PostsByCategory>('http://127.0.0.1:8000/posts/by_category')
-    )
+    const { data: posts_by_category } = useFetch<PostsByCategory>('http://localhost:8000/posts/by_category', { server: true })
 
     function getCategoryPosts(type: Categories): IPost[] {
         return posts_by_category.value?.[type] ?? []
@@ -23,6 +21,6 @@ export const usePostStore = defineStore('post', () => {
         post,
         fetchPost,
         posts_by_category,
-        getCategoryPosts
+        getCategoryPosts,
     }
 })

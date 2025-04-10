@@ -8,15 +8,15 @@ services:
     restart: unless-stopped
     ports:
       - 3000:3000
-    # volumes:
-    #   - ./nuxt:/app
     volumes:
       - ./nuxt:/app
       - node_modules:/app/node_modules
-    networks:
-      - app-network
     depends_on:
       - laravel
+    networks:
+      - app-network
+    extra_hosts:
+      - localhost:host-gateway
 
   laravel:
     build:
@@ -26,14 +26,22 @@ services:
     container_name: laravel_container
     restart: unless-stopped
     working_dir: /var/www
+    env_file:
+      - app.env
     volumes:
       - ./laravel:/var/www
+      - vendor:/var/www/vendor
+    command: >
+      sh -c 
+      "php artisan migrate && 
+      php-fpm"
     networks:
       - app-network
     depends_on:
-      - db
-      - meilisearch
-
+      meilisearch:
+        condition: service_started
+      db:
+        condition: service_healthy
   webserver:
     image: nginx:alpine
     container_name: webserver_container
@@ -52,24 +60,25 @@ services:
     image: mysql:8.0
     container_name: db_container
     restart: unless-stopped
-    environment:
-      MYSQL_DATABASE: laravel
-      MYSQL_ROOT_PASSWORD: secret
-      MYSQL_PASSWORD: secret
-      MYSQL_USER: laravel
+    env_file:
+      - app.env
     volumes:
       - ./docker-compose/data/mysql:/var/lib/mysql
-    ports:
-      - "3306:3306"
     networks:
       - app-network
+    healthcheck:
+      test: mysqladmin ping -h 127.0.0.1 -u $$MYSQL_USER --password=$$MYSQL_PASSWORD
+      interval: 5s
+      timeout: 5s
+      retries: 5
+      start_period: 5s
   meilisearch:
     image: getmeili/meilisearch:v1.13
     container_name: meilisearch_container
     ports:
       - 7700:7700
-    environment:
-      MEILI_MASTER_KEY: MASTER_KEY
+    env_file:
+      - app.env
     volumes:
       - ./docker-compose/data/meilisearch:/meili_data
     restart: unless-stopped
@@ -82,3 +91,4 @@ networks:
 
 volumes:
   node_modules:
+  vendor:
