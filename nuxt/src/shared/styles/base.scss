@@ -9,10 +9,26 @@
 }
 
 :root {
-    --color-bg-primary: rgb(186, 217, 205);
-    --color-bg-secondary: rgb(243, 121, 121);
-    --color-text-primary: rgb(0, 0, 0);
-    --color-text-secondary: rgb(0, 0, 0);
+    // --p-treeselect-background: white;
+    // --p-form-field-background: white;
+    // --p-content-background: white;
+    // --p-tree-node-color: black;
+    // --p-inputtext-color: black;
+    // --p-treeselect-color: black;
+    // --p-inputtext-border-color: red;
+
+    --color-card-bg: var(--p-pink-50);
+}
+
+.bg-card {
+    background-color: var(--color-card-bg);
+}
+.text-theme {
+    color: black;
+}
+
+.v-slider-thumb {
+    color: rgb(var(--v-theme-surface-variant));
 }
 
 html {
@@ -23,4 +39,17 @@ body {
     font-family: 'Open Sans';
     scroll-behavior: smooth;
     background-color: white;
+}
+
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: var(--p-gray-950);
+        // color: rgb(231, 231, 231);
+    }
+    :root {
+        --color-card-bg: var(--p-orange-200);
+    }
+    .text-theme {
+        color: white;
+    }
 }

@@ -5,7 +5,7 @@
             <NuxtLinkLocale :to="{name: 'home'}" class="cursor-pointer">{{ $t('posts') }}</NuxtLinkLocale>
         </div>
 
-        <div @click="navigateTo(localePath({name: 'profile'}))" class="border border-gray-400 rounded-md px-2 py-1 font-[Montserrat]" v-if="user_store.is_login">
+        <div @click="navigateTo(localePath({name: 'profile'}))" class="border border-gray-400 rounded-md px-2 py-1 font-[Montserrat] cursor-pointer" v-if="user_store.is_login">
             {{ user_store.user?.balance ?? 0 }} ₽
         </div>
         

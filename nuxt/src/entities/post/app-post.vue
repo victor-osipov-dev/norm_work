@@ -1,5 +1,5 @@
 <template>
-    <div class="app-post bg-pink-50 p-2 rounded-md grid grid-rows-subgrid ">
+    <div class="app-post bg-card p-2 rounded-md grid grid-rows-subgrid ">
         <div class="app-post__header relative overflow-hidden rounded">
             <NuxtLinkLocale  :to="{name: 'post', params: {id: post.id}}">
                 <img class="app-post__img row-start-1 w-full cursor-pointer" v-if="post.images?.[0]"

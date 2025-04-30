@@ -1,5 +1,5 @@
 <template>
-    <div class="app-post bg-pink-50 rounded-md flex  p-8 gap-8">
+    <div class="app-post bg-card rounded-md flex  p-8 gap-8">
 
         <div class="app-post__header overflow-hidden rounded self-start flex-grow max-w-[50rem]">
             <div class="rounded-md overflow-hidden mb-6">
