@@ -1,6 +1,6 @@
 <template>
     <div class=" flex-grow grid place-items-center">
-        <form class="bg-sky-300 p-8 rounded-md text-white" action="#">
+        <form class="bg-orange-200 p-8 rounded-md" action="#">
             <h2 class="text-3xl mb-8 text-center">Войти</h2>
 
             <div class="flex gap-4 flex-col xs:flex-row mb-4">

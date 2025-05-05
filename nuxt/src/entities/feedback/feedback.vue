@@ -1,5 +1,5 @@
 <template>
-    <div class="bg-card rounded-md p-8">
+    <div class="bg-card rounded-md p-2">
         <div class="flex items-center gap-3 mb-2">
             <img v-if="feedback.user.avatar" class="max-h-14 rounded-full" :src="feedback.user.avatar" alt="avatar">
             <img v-else class="max-h-14 rounded-full" src="@/shared/img/avatar.avif" alt="avatar">
@@ -10,9 +10,9 @@
             </div>
         </div>
 
-        <div class="flex flex-col gap-[1px] bg-gray-300">
+        <div class="flex flex-col gap-[1px] bg-gray-300 dark:bg-yellow-500">
 
-            <div class="bg-card py-4 flex flex-col gap-2" v-for="row in rows" :key="row.id">
+            <div class="bg-card py-2 flex flex-col gap-2" v-for="row in rows" :key="row.id">
                 <div class="flex gap-4 items-center">
                     <Rating readonly v-model="row.estimation">
                         <template #onicon>

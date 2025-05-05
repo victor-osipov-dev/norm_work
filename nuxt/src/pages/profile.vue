@@ -1,6 +1,6 @@
 <template>
     <div class="container mx-auto ">
-        <h1 class="mb-4 text-2xl">Профиль</h1>
+        <h1 class="mb-4 text-2xl text-theme">Профиль</h1>
 
         <div class="p-2 rounded-md bg-card">
             <div class="flex justify-between items-center">
@@ -17,7 +17,7 @@
                 <AppButton v-if="user_store.is_login" @click="logout" class="bg-sky-400 max-h-[2rem] text-white">Выйти</AppButton>
             </div>
 
-            <p>{{ user_store.user?.email ?? 'Email' }}</p>
+            <p>Email: {{ user_store.user?.email ?? 'Email' }}</p>
             <!-- <p>{{ user_store.user. }}</p> -->
         </div>
     </div>

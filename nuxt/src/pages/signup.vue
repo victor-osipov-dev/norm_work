@@ -1,6 +1,6 @@
 <template>
     <div class="container mx-auto flex-grow grid place-items-center">
-        <form @submit.prevent="register" class="bg-sky-300 p-8 rounded-md text-white " action="#">
+        <form @submit.prevent="register" class="bg-orange-200 p-8 rounded-md" action="#">
             <h2 class="text-3xl mb-8 text-center">Регистрация</h2>
 
             <div class="grid gap-4 mb-8 xs:grid-cols-2">

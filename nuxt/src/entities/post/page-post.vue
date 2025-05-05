@@ -1,5 +1,5 @@
 <template>
-    <div class="app-post bg-card rounded-md flex  p-8 gap-8">
+    <div class="app-post bg-card rounded-md flex  p-2 py-4 gap-8">
 
         <div class="app-post__header overflow-hidden rounded self-start flex-grow max-w-[50rem]">
             <div class="rounded-md overflow-hidden mb-6">
@@ -33,7 +33,7 @@
             </div>
         </div>
 
-        <div>
+        <div class="">
             <h3 class="text-2xl mb-4">{{ post.title }}</h3>
             <div class="app-post__description whitespace-pre-wrap max-w-[50rem] flex flex-col gap-4">
                 <p v-for="row in description_arr">{{ row }}</p>

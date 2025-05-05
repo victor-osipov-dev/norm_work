@@ -1,17 +1,14 @@
 <template>
     <div :id="post_type" class="container mx-auto p-2">
         <div class="flex justify-between items-center mb-4">
-            <!-- <ClientOnly> -->
-                <div class="test">
-                    test
-                </div>
-                <h2 class="text-2xl test" :class="{'text-yellow-400': isDark, 'text-gray-900': !isDark}">
-                    <NuxtLinkLocale alt="posts page" :to="{ name: 'posts', params: { type: post_type } }">{{ $t(post_type) }}</NuxtLinkLocale>
-                </h2>
-            <!-- </ClientOnly> -->
+            <h2 class="text-2xl text-gray-900 dark:text-yellow-400">
+                <NuxtLinkLocale alt="posts page" :to="{ name: 'posts', params: { type: post_type } }">{{ $t(post_type) }}</NuxtLinkLocale>
+            </h2>
 
-            <NuxtLinkLocale :to="{ name: 'posts', params: { type: post_type } }"><img alt="posts page" class="w-10 cursor-pointer" src="@/shared/img/arrow-right.png"
-                    ></NuxtLinkLocale>
+            <NuxtLinkLocale :to="{ name: 'posts', params: { type: post_type } }">
+                <div alt="posts page" class="h-10 w-10 cursor-pointer arrow-link bg-gray-900 dark:bg-yellow-400"></div>
+            </NuxtLinkLocale>
+            <!-- <div class="arrow"></div> -->
         </div>
         <CategoryPostList :posts></CategoryPostList>
     </div>
@@ -34,10 +31,10 @@ const props = defineProps<{
 </script>
 
 <style lang="scss" scoped>
-:root {
-    --color-is-dark: v-bind('"red"');
-}
-.test {
-    color: var( --color-is-dark);
+.arrow-link {
+    mask-image: url('@/shared/img/arrow-right.png');
+    mask-position: center;
+    mask-size: contain;
+    mask-repeat: no-repeat;
 }
 </style>

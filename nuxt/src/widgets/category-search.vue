@@ -1,12 +1,12 @@
 <template>
     <div class="bg-card container mx-auto p-2 rounded-md flex flex-col items-stretch justify-between gap-4 md:flex-row-reverse md:items-center">
         <div class="flex min-h-10 max-h-12 md:items-stretch md:flex-grow lg:min-w-[25rem] xl:min-w-[30rem] md:mr-4">
-            <AppInput aria-label="Search input" type="search" class="rounded-r-none outline-yellow-400 flex-grow" :placeholder="$t('search')" v-model="search"></AppInput>
+            <AppInput aria-label="Search input" type="search" class="rounded-r-none flex-grow" :placeholder="$t('search')" v-model="search"></AppInput>
             <AppButton @click="searchPosts" class="rounded-l-none bg-yellow-400">{{ $t('find') }}</AppButton>
         </div>
 
 
-        <ul class="category-list w-full md:w-max grid bg-gray-200 gap-x-[1px] gap-y-[1px] text-lg md:text-base items-center">
+        <ul class="category-list w-full md:w-max grid bg-gray-200 dark:bg-yellow-500 gap-x-[1px] gap-y-[1px] text-lg md:text-base items-center">
             <li class="bg-card py-2 px-4 text-center text-sm xs:text-base"><a href="#programming">{{ $t('programming') }}</a></li>
             <li class="bg-card py-2 px-4 text-center text-sm xs:text-base"><a href="#design">{{ $t('design') }}</a></li>
             <li class="bg-card py-2 px-4 text-center text-sm xs:text-base"><a href="#video/audio">{{ $t('video/audio') }}</a></li>
