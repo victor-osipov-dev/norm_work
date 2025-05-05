@@ -66,6 +66,8 @@ services:
       - mysql_data:/var/lib/mysql
     networks:
       - app-network
+    ports:
+      - 3307:3306
     healthcheck:
       test: mysqladmin ping -h 127.0.0.1 -u $$MYSQL_USER --password=$$MYSQL_PASSWORD
       interval: 5s

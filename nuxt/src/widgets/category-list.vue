@@ -32,7 +32,7 @@ const props = defineProps<{
 
 <style lang="scss" scoped>
 .arrow-link {
-    mask-image: url('@/shared/img/arrow-right.png');
+    mask-image: url('~/src/shared/img/arrow-right.png');
     mask-position: center;
     mask-size: contain;
     mask-repeat: no-repeat;

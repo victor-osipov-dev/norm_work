@@ -1,5 +1,5 @@
 <template>
-    <AppFilter class="mb-4"></AppFilter>
+    <AppFilter @search="searachHandle" class="mb-4"></AppFilter>
 
     <PostList :posts="posts ?? []"></PostList>
 </template>
@@ -11,13 +11,17 @@ definePageMeta({
     name: 'search-posts'
 })
 
+const localePath = useLocalePath()
 const route = useRoute()
+const query = ref(route.query.query)
+const { data: posts, error } = useFetch<IPost[]>(() => 'http://localhost:8000/posts/search?query=' + query.value)
 
-const { data: posts, error } = useFetch<IPost[]>('http://localhost:8000/posts/search?query=' + route.query.query)
-watchEffect(() => {
-    console.log(error.value);
-    
-})
+
+
+function searachHandle(str: string) {
+    query.value = str;
+    navigateTo(localePath({name: 'search-posts', query: { query: query.value }}))
+}
 </script>
 
 <style scoped>

@@ -11,9 +11,11 @@
                     </span>
                 </p>
 
-                <ClientOnly>
-                    <v-range-slider theme="light" hide-details v-model="range" :step="1000" :min="0" :max="100_000"></v-range-slider>
-                </ClientOnly>
+                <div class="h-[32px]">
+                    <ClientOnly>
+                        <v-range-slider theme="light" hide-details v-model="range" :step="1000" :min="0" :max="100_000"></v-range-slider>
+                    </ClientOnly>
+                </div>
             </div>
 
             <div class="md:w-[20rem] xl:content-center flex-shrink-0">
@@ -24,11 +26,11 @@
             </div>
         </div>
 
-        <div class="flex w-full xl:w-auto min-h-10 max-h-12 md:items-stretch md:flex-grow lg:min-w-[25rem] h-20 xl:min-w-[30rem] md:mr-4">
+        <form @submit.prevent="emit('search', search)" class="flex w-full xl:w-auto min-h-10 max-h-12 md:items-stretch md:flex-grow lg:min-w-[25rem] h-20 xl:min-w-[30rem] md:mr-4">
             <AppInput @focus="onFocus" class="rounded-r-none !outline-yellow-400 flex-grow "
                 :placeholder="$t('search')" v-model="search"></AppInput>
-            <AppButton class="rounded-l-none bg-yellow-400">{{ $t('find') }}</AppButton>
-        </div>
+            <AppButton type="submit" class="rounded-l-none bg-yellow-400">{{ $t('find') }}</AppButton>
+        </form>
     </div>
 </template>
 
@@ -36,8 +38,9 @@
 import { subcategories } from '../shared/consts';
 
 const select_el = useTemplateRef('select_el')
+const route = useRoute()
 
-
+const emit = defineEmits(['search'])
 // defineProps<{
 //     query: string
 // }>()
@@ -53,7 +56,7 @@ async function onFocus(event: any) {
 }
 
 const range = ref([0, 50_000]);
-const search = ref('')
+const search = ref(route.query.query ?? '')
 
 const selectedValue = ref(null);
 
