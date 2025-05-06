@@ -9,6 +9,39 @@
 }
 
 :root {
+    // export const MyPreset = definePreset(Aura, {
+    //     components: {
+    //         treeselect: {
+    //             background: '{surface.0}',
+    //             borderColor: '{surface.300}',
+    //             focusBorderColor: '{yellow.400}',
+    //             color: 'black'
+    //         },
+    //         inputtext: {
+    //             focusBorderColor: '{yellow.400}'
+    //         },
+    //         textarea: {
+    //             background: 'blue',
+    //         focusBorderColor: '{yellow.400}'
+    //         },
+    //         floatlabel: {
+    //             color: 'black',
+    //             focusColor: '{gray.600}'
+    //         }
+    //     }
+    // });
+
+    --p-form-field-color: var(--p-surface-700);
+    --p-form-field-background: var(--p-surface-0);
+    --p-form-field-border-color: var(--p-surface-300);
+    --p-form-field-float-label-focus-color: var(--p-surface-500);
+    --p-form-field-focus-border-color: var(--p-yellow-400);
+
+    --p-inputtext-background: var(--p-surface-950);
+    --p-textarea-background: var(--p-surface-950);
+    --p-textarea-border-color: var(--p-surface-600);
+    --p-textarea-color: white;
+
     --color-card-bg: var(--p-pink-50);
 }
 

@@ -1,20 +1,4 @@
 import Aura from '@primeuix/themes/aura';
-import { definePreset } from '@primeuix/themes';
-
-
-const MyPreset = definePreset(Aura, {
-    components: {
-        treeselect: {
-            background: '{surface.0}',
-            borderColor: '{surface.300}',
-            focusBorderColor: 'var(--color-yellow-400)',
-            color: 'black'
-        },
-        inputtext: {
-            focusBorderColor: 'var(--p-yellow-400)'
-        }
-    }
-});
 
 export default defineNuxtConfig({
     compatibilityDate: '2024-11-01',
@@ -74,7 +58,7 @@ export default defineNuxtConfig({
         autoImport: false,
         options: {
             theme: {
-                preset: MyPreset,
+                preset: Aura,
                 options: {
                     // darkModeSelector: false
                 }

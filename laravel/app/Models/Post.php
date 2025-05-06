@@ -23,6 +23,11 @@ class Post extends Model
         return $this->belongsTo(User::class, 'user_id');
     }
 
+
+    function feedbacks() {
+        return $this->hasMany(Feedback::class, 'post_id');
+    }
+
     public function toSearchableArray(): array
     {
         $array = $this->toArray();

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\FeedbackController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\UserController;
 use App\Models\Post;
@@ -19,9 +20,11 @@ Route::get('/auth/callback/{type}', [AuthController::class, 'auth_callback'])->w
 Route::get('/posts/by_category', [PostController::class, 'index_by_category']);
 Route::get('/posts/search', [PostController::class, 'search']);
 Route::get('/posts/{post}', [PostController::class, 'show']);
+Route::get('/feedbacks/{post}', [FeedbackController::class, 'get_feedbacks_by_post']);
 
 Route::middleware(['auth:sanctum'])->group(function () {
     Route::get('/user/profile', [UserController::class, 'show']);
+    Route::post('/posts/feedback/{post}', [FeedbackController::class, 'store']);
     Route::get('/user/logout', [AuthController::class, 'logout']);
 });
 
