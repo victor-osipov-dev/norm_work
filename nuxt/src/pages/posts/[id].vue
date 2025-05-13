@@ -44,7 +44,6 @@ import { useFeedbackStore } from '~/src/entities/feedback/feedback_store'
 import { usePostStore } from '~/src/entities/post/post_store'
 import type { IPost } from '~/src/entities/post/post_types'
 import { useUserStore } from '~/src/entities/user/user_store'
-import type { Categories, PostsByCategory } from '~/src/shared/types'
 
 definePageMeta({
     name: 'post'
@@ -72,7 +71,9 @@ function sendFeedback() {
         }, credentials: 'include', method: 'POST', headers: {'X-XSRF-TOKEN': xsrf_token.value}})
         .then((res) => {
             closeCommentArea()
-            // navigateTo(locale_path({name: 'profile'}));
+            if (post.value?.id) {
+                feedback_store.fetchFeedbacks(post.value.id)
+            }
         })
     }
 }
@@ -94,36 +95,14 @@ function closeCommentArea() {
 
 }
 
-const post = computed(() => {
-    return (Object.keys(post_store.posts_by_category ?? {}) as Categories[]).reduce((acc: IPost[], value: Categories): IPost[] => {
-        return post_store.posts_by_category?.[value] ? [
-            ...acc,
-            ...post_store.posts_by_category[value]
-        ] : acc;
-    }, [])
-    .find((post: IPost) => post.id == Number(route.params.id))
-})
-// // console.log(123);
-// watch(() => post.value?.id, () => {
-//     console.log(123);
+const post = computed<IPost | undefined>(() => post_store.all_posts.find((post: IPost) => post.id == Number(route.params.id)))
+
+
+if (post.value?.id) {
+    console.log('fetchFeedbacks');
     
-//     if (post.value?.id) {
-//         console.log('fetchFeedbacks');
-        
-//         feedback_store.fetchFeedbacks(post.value.id)
-//         // stop()
-//     }
-// }, {deep: true})
-
-
-watchEffect(() => {
-    if (post.value?.id) {
-        console.log('fetchFeedbacks');
-        
-        feedback_store.fetchFeedbacks(post.value.id)
-        // stop()
-    }
-})
+    feedback_store.fetchFeedbacks(post.value.id)
+}
 
 </script>
 

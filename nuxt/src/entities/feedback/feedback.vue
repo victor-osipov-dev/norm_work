@@ -2,7 +2,7 @@
     <div class="bg-card rounded-md p-2">
         <div class="flex items-center gap-3 mb-2">
             <img v-if="feedback.user.avatar" class="max-h-14 rounded-full" :src="feedback.user.avatar" alt="avatar">
-            <img v-else class="max-h-14 rounded-full" src="@/shared/img/avatar.avif" alt="avatar">
+            <Icon v-else class="bg-gray-800" name="streamline:user-circle-single-solid" size="3.5rem" />
 
             <div class="text-2xl flex gap-1 text-gray-500">
                 <p>{{ feedback.user.first_name }}</p>

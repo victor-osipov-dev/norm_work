@@ -3,24 +3,22 @@ import type { IPost } from "./post_types"
 
 export const usePostStore = defineStore('post', () => {
     const posts = ref<IPost[]>([])
-    const post = ref<IPost | null>(null)
-
+    const all_posts = computed<IPost[]>(() => {
+        return posts.value.concat(
+            ...Object.values(posts_by_category.value ?? {})
+        )
+    })
 
     function fetchPost(id: number) {
         $fetch('http://localhost:8000/posts/' + id)
     }
 
-    const { data: posts_by_category } = useFetch<PostsByCategory>('http://localhost:8000/posts/by_category', { server: true })
-
-    function getCategoryPosts(type: Categories): IPost[] {
-        return posts_by_category.value?.[type] ?? []
-    }
+    const { data: posts_by_category } = useFetch<PostsByCategory>('http://localhost:8000/posts/by_category', { server: false })
 
     return {
         posts,
-        post,
+        all_posts,
         fetchPost,
         posts_by_category,
-        getCategoryPosts,
     }
 })

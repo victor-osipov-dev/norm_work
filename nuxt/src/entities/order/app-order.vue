@@ -3,7 +3,7 @@
 
         <div class="bg-gray-800 text-white p-4 flex xl:flex-col items-center justify-between xl:justify-start">
             <div class="flex items-center gap-1 xl:gap-0 xl:flex-col xl:mb-4">
-                <img class="w-10 rounded-full mr-1 xl:mr-0 xl:mb-2" src="@/shared/img/avatar.avif" alt="avatar">
+                <Icon class="bg-gray-500 mr-1 xl:mr-0 xl:mb-2" name="streamline:user-circle-single-solid" size="2.5rem" />
                 <p>{{ order.user.first_name }}</p>
                 <p>{{ order.user.last_name }}</p>
             </div>

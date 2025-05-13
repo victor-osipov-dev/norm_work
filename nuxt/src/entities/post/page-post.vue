@@ -21,7 +21,7 @@
             <div class="flex justify-between items-center">
                 <div class="flex items-center gap-3">
                     <img v-if="post.user.avatar" class="max-h-14 rounded-full" :src="post.user.avatar" alt="avatar">
-                    <img v-else class="max-h-14 rounded-full" src="@/shared/img/avatar.avif" alt="avatar">
+                    <Icon v-else class="bg-gray-800" name="streamline:user-circle-single-solid" size="3.5rem" />
 
                     <div class="text-2xl flex gap-1 text-gray-500">
                         <p>{{ post.user.first_name }}</p>

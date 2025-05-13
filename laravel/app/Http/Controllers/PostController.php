@@ -52,7 +52,27 @@ class PostController extends Controller
 
     function index_by_category(Request $request)
     {
-        return response(Category::index());
+        $categories = collect(['programming', 'design', 'video/audio', 'texts', 'marketing', 'seo']);
+        $response = [];
+        
+        $categories->each(function ($category) use(&$response) {
+            $response[$category] = Post::with(['user', 'files', 'feedbacks'])->where('type', $category)->limit(8)->get()->each(function ($post) {
+                // $feedbacks = $post->feedbacks->groupBy('user_id')->count();
+
+                $post->user->rating = 5;
+                $post->user->number_reviews = 25;
+
+                $post->images = $post->files->map(fn ($file) => $file->url);
+
+                unset($post->files);
+                unset($post->feedbacks);
+
+            });
+            // $response[$category] = $response[$category]->map(fn($item) => [...$item, 'rating' => 5]);
+        });
+
+        // dd($response);
+        return response($response);
     }
 
 
