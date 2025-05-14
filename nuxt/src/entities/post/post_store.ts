@@ -13,7 +13,7 @@ export const usePostStore = defineStore('post', () => {
         $fetch('http://localhost:8000/posts/' + id)
     }
 
-    const { data: posts_by_category } = useFetch<PostsByCategory>('http://localhost:8000/posts/by_category', { server: false })
+    const { data: posts_by_category } = useFetch<PostsByCategory>('http://localhost:8000/posts/by_category', { server: true })
 
     return {
         posts,

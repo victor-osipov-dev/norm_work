@@ -31,23 +31,22 @@ class Post extends Model
 
     public function feedbacksNumber(): Attribute
     {
-        return new Attribute(
+        return Attribute::make(
             get: fn () => $this->feedbacks->groupBy('user_id')->count(),
         );
     }
     public function rating(): Attribute
     {
-        return new Attribute(
+        return Attribute::make(
             get: fn () => $this->feedbacks->avg('estimation'),
         );
     }
-
-    // protected function isAdmin(): Attribute
-    // {
-    //     return new Attribute(
-    //         get: fn () => 'yes',
-    //     );
-    // }
+    public function images(): Attribute
+    {
+        return Attribute::make(
+            get: fn () => $this->files->map(fn ($file) => $file->url),
+        );
+    }
 
     public function toSearchableArray(): array
     {
@@ -56,5 +55,5 @@ class Post extends Model
         return $array;
     }
 
-    protected $appends = ['feedbacks_number', 'rating'];
+    protected $appends = ['feedbacks_number', 'rating', 'images'];
 }

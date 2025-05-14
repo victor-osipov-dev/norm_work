@@ -54,21 +54,14 @@ class PostController extends Controller
     {
         $categories = collect(['programming', 'design', 'video/audio', 'texts', 'marketing', 'seo']);
         $response = [];
+
+        
         
         $categories->each(function ($category) use(&$response) {
-            $response[$category] = Post::with(['user', 'files', 'feedbacks'])->where('type', $category)->limit(8)->get()->each(function ($post) {
-                // $feedbacks = $post->feedbacks->groupBy('user_id')->count();
-
-                $post->user->rating = 5;
-                $post->user->number_reviews = 25;
-
-                $post->images = $post->files->map(fn ($file) => $file->url);
-
-                unset($post->files);
-                unset($post->feedbacks);
-
+            $response[$category] = Post::with(['user.posts', 'files', 'feedbacks'])->where('type', $category)->limit(8)->get()->makeHidden(['files', 'feedbacks'])
+            ->each(function ($post) {
+                $post->user->makeHidden(['posts']);
             });
-            // $response[$category] = $response[$category]->map(fn($item) => [...$item, 'rating' => 5]);
         });
 
         // dd($response);
