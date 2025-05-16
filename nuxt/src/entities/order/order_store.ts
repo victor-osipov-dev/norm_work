@@ -13,7 +13,7 @@ export const useOrderStore =  defineStore('order', () => {
             user: {
                 first_name: 'Victor',
                 last_name: 'Osipov',
-                number_reviews: 5,
+                feedbacks_number: 5,
                 rating: 5,
                 balance: 0
             },
@@ -30,7 +30,7 @@ export const useOrderStore =  defineStore('order', () => {
             user: {
                 first_name: 'Victor',
                 last_name: 'Osipov',
-                number_reviews: 15,
+                feedbacks_number: 15,
                 rating: 5,
                 balance: 0
             },
@@ -53,7 +53,7 @@ export const useOrderStore =  defineStore('order', () => {
             user: {
                 first_name: 'Victor',
                 last_name: 'Osipov',
-                number_reviews: 5,
+                feedbacks_number: 5,
                 rating: 5,
                 balance: 0
             },

@@ -11,8 +11,8 @@
 
                     <div class="flex items-center gap-1 ">
                         <Icon class="bg-yellow-400 mb-0.5" name="streamline:star-1-solid" size="1em" />
-                        <p>{{ post.user.rating }}</p>
-                        <p>({{ post.user.number_reviews }})</p>
+                        <p>{{ post.rating }}</p>
+                        <p>({{ post.feedbacks_number }})</p>
                     </div>
                 </div>
             </div>

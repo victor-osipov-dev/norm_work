@@ -5,8 +5,10 @@
         <div class="p-2 rounded-md bg-card">
             <div class="flex justify-between items-center">
                 <div class="flex mb-4 items-center gap-4">
-                    <img v-if="user_store.user?.avatar" class="rounded-full h-20" :src="user_store.user?.avatar" alt="">
-                    <img v-else class="rounded-full h-20" src="@/shared/img/avatar.avif" alt="avatar">
+                    <!-- <div>
+                        <img v-if="user_store.is_login" class="rounded-full h-20" :src="user_store.user.avatar" alt="">
+                        <Icon v-else class="bg-gray-800" name="streamline:user-circle-single-solid" size="5rem" />
+                    </div> -->
                     
                     <div>
                         <p class="text-2xl">{{ user_store.user?.first_name ?? 'Имя' }}</p>
@@ -14,11 +16,11 @@
                     </div>
                 </div>
                 
-                <AppButton v-if="user_store.is_login" @click="logout" class="bg-sky-400 max-h-[2rem] text-white">Выйти</AppButton>
+                <AppButton v-if="user_store.is_login" @click="logout" class="bg-red-600 max-h-[2rem] text-white">Выйти</AppButton>
             </div>
 
             <p>Email: {{ user_store.user?.email ?? 'Email' }}</p>
-            <!-- <p>{{ user_store.user. }}</p> -->
+            {{ user_store.user ?? 'none' }}
         </div>
     </div>
 

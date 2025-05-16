@@ -38,7 +38,7 @@ class Post extends Model
     public function rating(): Attribute
     {
         return Attribute::make(
-            get: fn () => $this->feedbacks->avg('estimation'),
+            get: fn () => round($this->feedbacks->avg('estimation'), 2),
         );
     }
     public function images(): Attribute

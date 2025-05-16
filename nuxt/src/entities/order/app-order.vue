@@ -11,7 +11,7 @@
             <div class="flex items-center gap-1">
                 <Icon class="bg-yellow-400 mb-0.5" name="streamline:star-1-solid" size="1em" />
                 <p>{{ order.user.rating }}</p>
-                <p>({{ order.user.number_reviews }})</p>
+                <p>({{ order.user.feedbacks_number }})</p>
             </div>
         </div>
 

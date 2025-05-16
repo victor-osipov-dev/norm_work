@@ -64,7 +64,7 @@ class User extends Authenticatable
     public function rating(): Attribute
     {
         return Attribute::make(
-            get: fn () => $this->posts->pluck('feedbacks')->collapse()->avg('estimation'),
+            get: fn () => round($this->posts->pluck('feedbacks')->collapse()->avg('estimation'), 2),
         );
     }
 

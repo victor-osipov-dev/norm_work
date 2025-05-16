@@ -12,10 +12,10 @@
                 <p class="text-green-400 font-bold text-lg sm:text-lg">{{ format(post.min_price) }} – {{
                     format(post.max_price) }} ₽</p>
 
-                <div class="flex items-center gap-1">
+                <div v-if="post.feedbacks_number" class="flex items-center gap-1">
                     <Icon class="bg-yellow-400 mb-0.5" name="streamline:star-1-solid" size="1em" />
-                    <p>{{ post.user.rating }}</p>
-                    <p>({{ post.user.number_reviews }})</p>
+                    <p>{{ post.rating }}</p>
+                    <p>({{ post.feedbacks_number }})</p>
                 </div>
             </div>
         </div>

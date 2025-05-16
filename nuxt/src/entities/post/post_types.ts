@@ -8,5 +8,7 @@ export interface IPost {
     type: string,
     min_price: number,
     max_price: number,
-    user: IUser
+    user: IUser,
+    rating: number,
+    feedbacks_number: number,
 }
